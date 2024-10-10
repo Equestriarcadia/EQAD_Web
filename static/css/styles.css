@@ -2308,6 +2308,16 @@ a:hover.back-to-top {
 		margin-top: 1.875rem;
 		margin-right: 3rem;
 	}
+	
+	.basic-1 .text-container .main-body {
+		margin-top: 1.875rem;
+		margin-right: 3rem;
+		text-indent: 2em;
+	}
+
+	.basic-1 .text-under-picture {
+		text-align: center;
+	}
 	/* end of intro */
 
 
