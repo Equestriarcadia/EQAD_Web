@@ -812,6 +812,16 @@ input[type='checkbox'] {
 	margin-bottom: 3rem;
 }
 
+.basic-1 .text-container .main-body {
+	margin-top: 1.875rem;
+	margin-right: 3rem;
+	text-indent: 2em;
+}
+
+.basic-1 .text-under-picture {
+	text-align: center;
+}
+
 .basic-1 .section-title {
 	margin-bottom: 0.5rem;
 }
@@ -1782,8 +1792,8 @@ a:hover.back-to-top {
 /*     20. Extra Pages     */
 /***************************/
 .ex-header {
-	padding-top: 8rem;
-	padding-bottom: 5rem;
+	padding-top: 3rem;
+	padding-bottom: 2rem;
 	background-color: #153e52;
 	text-align: center;
 }
@@ -2016,8 +2026,8 @@ a:hover.back-to-top {
 
 	/* Extra Pages */
 	.ex-header {
-		padding-top: 11rem;
-		padding-bottom: 9rem;
+		padding-top: 6rem;
+		padding-bottom: 2rem;
 	}
 
 	.ex-basic-2 .form-container {
@@ -2307,16 +2317,6 @@ a:hover.back-to-top {
 	.basic-1 .text-container {
 		margin-top: 1.875rem;
 		margin-right: 3rem;
-	}
-	
-	.basic-1 .text-container .main-body {
-		margin-top: 1.875rem;
-		margin-right: 3rem;
-		text-indent: 2em;
-	}
-
-	.basic-1 .text-under-picture {
-		text-align: center;
 	}
 	/* end of intro */
 
