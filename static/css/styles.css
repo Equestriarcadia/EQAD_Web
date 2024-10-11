@@ -776,7 +776,7 @@ input[type='checkbox'] {
 
 .header .header-content {
 	padding-top: 8rem;
-	padding-bottom: 2.125rem;
+	padding-bottom: 0rem;
 	text-align: center;
 }
 
@@ -804,7 +804,7 @@ input[type='checkbox'] {
 /*     05. Intro     */
 /*********************/
 .basic-1 {
-	padding-top: 6.5rem;
+	padding-top: 4.5rem;
 	padding-bottom: 3rem;
 }
 
@@ -814,7 +814,7 @@ input[type='checkbox'] {
 
 .basic-1 .text-container .main-body {
 	margin-top: 1.875rem;
-	margin-right: 3rem;
+	margin-right: 0rem;
 	text-indent: 2em;
 }
 
@@ -904,7 +904,7 @@ input[type='checkbox'] {
 /*     07. Services     */
 /************************/
 .cards-2 {
-	padding-top: 6.625rem;	
+	padding-top: 3.625rem;	
 	padding-bottom: 1.25rem;	
 	background-color: #fbfbfb;
 }
@@ -920,7 +920,7 @@ input[type='checkbox'] {
 }
 
 .cards-2 .card {
-	margin-bottom: 5.625rem;
+	margin-bottom: 3.625rem;
 	border: none;
 	background-color: transparent;
 }
@@ -936,6 +936,7 @@ input[type='checkbox'] {
 	border-bottom-left-radius: 0.375rem;
 	border-bottom-right-radius: 0.375rem;
 	background-color: #fff;
+	text-align: center;
 }
 
 .cards-2 h3 {
@@ -1511,7 +1512,7 @@ input[type='checkbox'] {
 }
 
 .basic-2 h2 {
-	margin-bottom: 0.75rem;
+	margin-bottom: 2.5rem;
 }
 
 .basic-2 .team-member {
@@ -1792,7 +1793,7 @@ a:hover.back-to-top {
 /*     20. Extra Pages     */
 /***************************/
 .ex-header {
-	padding-top: 3rem;
+	padding-top: 6rem;
 	padding-bottom: 2rem;
 	background-color: #153e52;
 	text-align: center;
@@ -1937,7 +1938,7 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header .header-content {
-		padding-top: 13rem;
+		padding-top: 10rem;
 		padding-bottom: 7.5rem;
 	}
 
@@ -2026,7 +2027,7 @@ a:hover.back-to-top {
 
 	/* Extra Pages */
 	.ex-header {
-		padding-top: 6rem;
+		padding-top: 7rem;
 		padding-bottom: 2rem;
 	}
 
@@ -2098,10 +2099,10 @@ a:hover.back-to-top {
 	/* end of header */
 
 
-	/* Intro */
+	/* Intro 
 	.basic-1 {
 		padding-top: 6.875rem;
-	}
+	}*/
 
 	.basic-1 .text-container {
 		margin-bottom: 0;
@@ -2126,7 +2127,7 @@ a:hover.back-to-top {
 
 	/* Services */
 	.cards-2 .card {
-		max-width: 18.25rem;
+		width: 18.25rem;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -2307,8 +2308,8 @@ a:hover.back-to-top {
 	
 	/* Header */
 	.header .header-content {
-		padding-top: 14.75rem;
-		padding-bottom: 17.5rem;
+		padding-top: 6.75rem;
+		padding-bottom: 10.5rem;
 	}
 	/* end of header */
 
@@ -2335,7 +2336,7 @@ a:hover.back-to-top {
 
 	/* Services */
 	.cards-2 .card {
-		max-width: 20.875rem;
+		width: 20.875rem;
 	}
 
 	.cards-2 .card-body {
