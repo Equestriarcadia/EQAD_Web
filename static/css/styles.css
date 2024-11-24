@@ -770,14 +770,20 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/achXdg.jpg') center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/achXdg.jpg') top center no-repeat;
 	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	position: relative;
 }
 
 .header .header-content {
-	padding-top: 21rem;
 	text-align: center;
-	height: 100%;
+	height: 100vh;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
 }
 
 .header .text-container {
@@ -1938,7 +1944,7 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header .header-content {
-		padding-top: 20rem;
+		/*padding-top: 20rem;*/
 	}
 
 	.header h1 {
@@ -2088,7 +2094,7 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header .header-content {
-		padding-top: 13.5rem;
+		/*padding-top: 13.5rem;*/
 	}
 
 	.header .text-container {
@@ -2306,7 +2312,7 @@ a:hover.back-to-top {
 	
 	/* Header */
 	.header .header-content {
-		padding-top: 13.5rem;
+		/*padding-top: 13.5rem;*/
 	}
 	/* end of header */
 
