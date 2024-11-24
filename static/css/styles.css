@@ -770,20 +770,30 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/achXdg.jpg') top center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/achXdg.jpg') top center;
 	background-size: cover;
+	position: relative;
 	height: 100vh;
 	width: 100%;
-	position: relative;
 }
 
+@media (min-width: 1024px) {
+	.header {
+	  background-attachment: fixed;
+	}
+  }
+
 .header .header-content {
-	text-align: center;
-	height: 100vh;
-	width: 100%;
-	justify-content: center;
-	display: flex;
-	align-items: center;
+	position: absolute;
+    bottom: 250;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .header .text-container {
@@ -791,9 +801,20 @@ input[type='checkbox'] {
 }
 
 .header h1 {
-	margin-bottom: 0.5rem;
-	color: #fff;
+	margin: 30px 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
 }
+
+@media (max-width: 768px) {
+	.header h1 {
+	  font-size: 28px;
+	  line-height: 36px;
+	}
+  }
 
 .header .p-large {
 	margin-top: 1rem;
@@ -804,7 +825,6 @@ input[type='checkbox'] {
 	margin-right: 0.5rem;
 	margin-bottom: 1.25rem;
 }
-
 
 /*********************/
 /*     05. Intro     */
@@ -1944,7 +1964,7 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header .header-content {
-		/*padding-top: 20rem;*/
+		padding-top: 20rem;
 	}
 
 	.header h1 {
@@ -2094,7 +2114,7 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header .header-content {
-		/*padding-top: 13.5rem;*/
+		padding-top: 13.5rem;
 	}
 
 	.header .text-container {
@@ -2312,7 +2332,7 @@ a:hover.back-to-top {
 	
 	/* Header */
 	.header .header-content {
-		/*padding-top: 13.5rem;*/
+		padding-top: 13.5rem;
 	}
 	/* end of header */
 
