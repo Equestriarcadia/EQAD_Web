@@ -646,7 +646,7 @@ input[type='checkbox'] {
 	flex-direction: column;
 	overflow: hidden;
 	height: 40px;
-	margin: 0 5px;
+	margin: 0 3px;
   }
   
   .letter {
