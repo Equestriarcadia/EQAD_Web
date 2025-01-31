@@ -584,7 +584,7 @@ input[type='checkbox'] {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #00bcd4;
+	background: #ffffff;
 }
 
 .spinner {
@@ -633,6 +633,49 @@ input[type='checkbox'] {
 		transform: scale(1.0);
 	}
 }
+
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  }
+
+.letter-container {
+	display: inline-flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 40px;
+	margin: 0 5px;
+  }
+  
+  .letter {
+	animation: scroll 1.6s infinite;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+  }
+  
+  @keyframes scroll {
+	0%, 20% {
+	  transform: translateY(-100%);
+	  opacity: 0;
+	}
+	40%, 60% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+	80%, 100% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+  }
+  
+  /* 为每个字母设置不同颜色和延迟 */
+  .letter-container:nth-child(1) .letter { color: #00f7ff; animation-delay: 0s; }
+  .letter-container:nth-child(2) .letter { color: #00ffea; animation-delay: 0.1s; }
+  .letter-container:nth-child(3) .letter { color: #00ffbf; animation-delay: 0.2s; }
+  .letter-container:nth-child(4) .letter { color: #00ff73; animation-delay: 0.3s; }
 
 
 /**************************/
