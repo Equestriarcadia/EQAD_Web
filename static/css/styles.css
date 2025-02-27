@@ -824,11 +824,11 @@ input[type='checkbox'] {
 	.header {
 	  background-attachment: fixed;
 	}
-  }
+}
 
 .header .header-content {
 	position: absolute;
-    bottom: 250;
+    bottom: 0;
     top: 0;
     left: 0;
     right: 0;
@@ -837,10 +837,6 @@ input[type='checkbox'] {
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
-
-.header .text-container {
-	margin-bottom: 3rem;
 }
 
 .header h1 {
@@ -2006,9 +2002,7 @@ a:hover.back-to-top {
 
 
 	/* Header */
-	.header .header-content {
-		padding-top: 20rem;
-	}
+
 
 	.header h1 {
 		font: 700 3.5rem/4rem "Montserrat", sans-serif;
@@ -2156,14 +2150,6 @@ a:hover.back-to-top {
 
 
 	/* Header */
-	.header .header-content {
-		padding-top: 13.5rem;
-	}
-
-	.header .text-container {
-		margin-top: 6.5rem;
-	}
-	/* end of header */
 
 
 	/* Intro 
@@ -2374,10 +2360,6 @@ a:hover.back-to-top {
 
 	
 	/* Header */
-	.header .header-content {
-		padding-top: 13.5rem;
-	}
-	/* end of header */
 
 
 	/* Intro */
