@@ -13,6 +13,7 @@
         '|   __|  |  |     |  |  |  | | | | -_|  _| | | | . |  _| ,_|\n' +
         '|_____|__  _|__|__|____/   |_|___|___|_| |_____|___|_| |_,_|\n' +
         '         |__|                                               \n' +
+        '\n' +
         'EQAD_Web - By Leonsu_L & JessDaodao\n' +
         '网站基于模板二次创作，已在GitHub开源：https://github.com/Equestriarcadia/EQAD_Web');
 
