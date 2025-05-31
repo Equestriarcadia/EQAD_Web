@@ -579,12 +579,15 @@ input[type='checkbox'] {
 /*************************/
 .spinner-wrapper {
 	position: fixed;
-	z-index: 999999;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: #ffffff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
 }
 
 .spinner {
@@ -633,49 +636,64 @@ input[type='checkbox'] {
 		transform: scale(1.0);
 	}
 }
-
+        
 .loader {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+        
+.image-loader {
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
 
-.letter-container {
-	display: inline-flex;
-	flex-direction: column;
-	overflow: hidden;
-	height: 40px;
-	margin: 0 3px;
-  }
-  
-  .letter {
-	animation: scroll 1.6s infinite;
-	font-family: Arial, sans-serif;
-	font-weight: bold;
-	font-size: 32px;
-  }
-  
-  @keyframes scroll {
-	0%, 20% {
-	  transform: translateY(-100%);
-	  opacity: 0;
-	}
-	40%, 60% {
-	  transform: translateY(0);
-	  opacity: 1;
-	}
-	80%, 100% {
-	  transform: translateY(100%);
-	  opacity: 0;
-	}
-  }
-  
-  /* 为每个字母设置不同颜色和延迟 */
-  .letter-container:nth-child(1) .letter { color: #00f7ff; animation-delay: 0s; }
-  .letter-container:nth-child(2) .letter { color: #00ffea; animation-delay: 0.1s; }
-  .letter-container:nth-child(3) .letter { color: #00ffbf; animation-delay: 0.2s; }
-  .letter-container:nth-child(4) .letter { color: #00ff73; animation-delay: 0.3s; }
+.image-loader img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.isloading-line {
+    position: relative;
+    width: 95px;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.isloading-line::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    border-radius: 2px;
+    animation: isloading 2s infinite ease-in-out;
+}
+        
+@keyframes isloading {
+    0% {
+        left: -100%;
+        width: 100%;
+    }
+    50% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 50%;
+    }
+}
 
 
 /**************************/
