@@ -645,7 +645,7 @@ input[type='checkbox'] {
 }
         
 .image-loader {
-    width: 100px;
+    width: 105px;
     height: auto;
     display: flex;
     justify-content: center;
@@ -806,7 +806,7 @@ input[type='checkbox'] {
 .navbar-custom .navbar-toggler {
 	border: none;
 	color: #fff;
-	background: url('../image/sUwLKx.png');
+	background: url('../image/navbar-toggler.png');
 	background-size: cover;
 }
 
@@ -832,7 +832,7 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/achXdg.jpg') top center;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../image/dg.jpg') top center;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
