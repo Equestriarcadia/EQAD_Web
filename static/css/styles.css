@@ -650,7 +650,6 @@ input[type='checkbox'] {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
 }
 
 .image-loader img {
