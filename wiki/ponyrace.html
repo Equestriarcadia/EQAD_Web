@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Website Title -->
+    <title>PonyRace 指南 - EQAD Network</title>
+    
+    <!-- Styles -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/magnific-popup.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    
+    <!-- Favicon  -->
+    <link rel="icon" href="../static/image/Q.png">
+
+    <script async="" src='../static/js/invisible.js'></script>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="loader">
+            <div class="image-loader">
+                <img src="../static/image/loading.svg">
+            </div>
+            <div class="isloading-line"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="../index.html"><img src="../static/picture/eqadlogo.svg" alt="alternative"></a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="../index.html">主页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="../index.html#list">服务器列表 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="server.html">游玩指南 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="../banlist.html">封神榜 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="https://qm.qq.com/q/MOZWC51P4Q">加入群聊 <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>PonyRace 指南</h1>
+                    <h5 style="color: #cdcdcd;">Wiki</h5>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="../index.html">主页</a><span>&nbsp;&nbsp;>&nbsp;&nbsp;PonyRace 指南</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+
+    <!-- Wiki Content -->
+    <div class="ex-basic-2">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-lg-3">
+                    <div class="sidebar-nav">
+                        <div class="sidebar-nav-header">
+                            <h4><br><br><br>目录</h4>
+                        </div>
+                        <ul class="sidebar-nav-menu">
+                            <li><a href="#attention" class="page-scroll">注意事项</a></li>
+                            <li><a href="#about" class="page-scroll">简介</a></li>
+                            <li><a href="#race-list" class="page-scroll">种族列表</a></li>
+                            <li><a href="#papi" class="page-scroll">PAPI变量</a></li>
+                            <li><a href="#commands" class="page-scroll">指令</a></li>
+                            <li><a href="#permission" class="page-scroll">权限节点</a></li>
+                            <li><a href="#config" class="page-scroll">配置文件</a></li>
+                            <li><a href="#status" class="page-scroll">统计</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="wiki-content">
+                        <!-- Attention Section -->
+                        <section id="attention">
+                            <h2><br><br><br>注意事项</h2>
+                            <div class="wiki-card">
+                                <p>这是一个Bukkit插件，需要安装在Spigot及其下游分支的服务端内才能运行<br>
+                                对于个人玩家，我们更推荐你去看看<a href="https://www.mcmod.cn/class/12030.html">Unicopia</a><br>
+                                测试过的版本：1.20.1、1.21.1<br>
+                                理论兼容版本：1.16.x-1.21.x
+                            </div>
+                        </section>
+
+                        <!-- About Section -->
+                        <section id="about">
+                            <h2><br><br><br>简介</h2>
+                            <div class="wiki-card">
+                                <p>这是EQAD Network开发的插件<br>
+                                可以让玩家在游戏内扮演MLP种族<br>
+                                目前插件共包含8个种族 <del>（除了幻形灵，因为我不会做）</del><br>
+                                分别是飞马、陆马、独角兽、夜琪、海马、麒麟、龙、人类（人类是凑数的）<br>
+                                每个种族都有单独的技能、数值和饮食习惯</p>
+                            </div>
+                        </section>
+                        
+                        <!-- Race List Section -->
+                        <section id="race-list">
+                            <h2><br><br><br>种族列表</h2>
+                            <div class="wiki-card">
+                                <h3>飞马</h3>
+                                <ul>
+                                    <li>永久速度I效果</li>
+                                    <li>拿着木棍时能飞行</li>
+                                    <li>飞行时拿着木棍右键可以俯冲</li>
+                                    <li>飞行和俯冲有体力限制</li>
+                                    <li>喜欢素食，讨厌肉食</li>
+                                    <li>可以食用一些原版不能直接食用的植物</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>陆马</h3>
+                                <ul>
+                                    <li>24点生命上限</li>
+                                    <li>永久力量I效果</li>
+                                    <li>永久跳跃提升I效果</li>
+                                    <li>永久速度I效果</li>
+                                    <li>喜欢素食，讨厌肉食</li>
+                                    <li>可以食用一些原版不能直接食用的植物</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>独角兽</h3>
+                                <ul>
+                                    <li>拿着木棍左键发射烈焰弹</li>
+                                    <li>拿着木棍右键发射末影珍珠</li>
+                                    <li>有魔力限制</li>
+                                    <li>喜欢素食，讨厌肉食</li>
+                                    <li>可以食用一些原版不能直接食用的植物</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>夜琪</h3>
+                                <ul>
+                                    <li>拿着木棍时能飞行</li>
+                                    <li>飞行时拿着木棍右键可以俯冲</li>
+                                    <li>飞行和俯冲有体力限制</li>
+                                    <li>拥有夜视能力</li>
+                                    <li>白天有虚弱I效果</li>
+                                    <li>晚上有力量II效果</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>海马</h3>
+                                <ul>
+                                    <li>可以在水下呼吸</li>
+                                    <li>水下游泳速度更快</li>
+                                    <li>在水中拿着木棍右键可以突进</li>
+                                    <li>突进有体力限制</li>
+                                    <li>喜欢素食，讨厌肉食</li>
+                                    <li>可以食用一些原版不能直接食用的植物</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>麒麟</h3>
+                                <ul>
+                                    <li>30点生命上限</li>
+                                    <li>不怕火</li>
+                                    <li>拿着木棍右键可以发怒</li>
+                                    <li>发怒会产生火焰</li>
+                                    <li>处于发怒时有力量II和抗性提升I效果</li>
+                                    <li>发怒后会获得时长为3分钟虚弱II效果</li>
+                                </ul>
+                            </div>
+
+                            <div class="wiki-card">
+                                <h3>龙族</h3>
+                                <ul>
+                                    <li>26点生命上限</li>
+                                    <li>拿着木棍时能飞行</li>
+                                    <li>飞行有体力限制</li>
+                                    <li>不怕火</li>
+                                    <li>吃绿宝石或者钻石可以恢复生命</li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+                        <!-- PAPI Section -->
+                        <section id="papi">
+                            <h2><br><br><br>PAPI变量</h2>
+                            <div class="wiki-card">
+                                <table class="command-table">
+                                    <thead>
+                                        <tr>
+                                            <th>变量</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>%ponyrace_race%</code></td>
+                                            <td>返回玩家种族</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%ponyrace_stamina%</code></td>
+                                            <td>返回玩家体力值</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%ponyrace_mana%</code></td>
+                                            <td>返回玩家魔力值</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%ponyrace_enrage_time%</code></td>
+                                            <td>返回玩家发怒值</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        
+                        <!-- Commands Section -->
+                        <section id="commands">
+                            <h2><br><br><br>指令</h2>
+                            <div class="wiki-card">
+                                <table class="command-table">
+                                    <thead>
+                                        <tr>
+                                            <th>命令</th>
+                                            <th>描述</th>
+                                            <th>示例</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>/pr set <种族> [玩家]</code></td>
+                                            <td>设置种族</td>
+                                            <td><code>/pr set kirin Leon</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/pr info [玩家]</code></td>
+                                            <td>查看种族信息</td>
+                                            <td><code>/pr info Leon</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/pr reload</code></td>
+                                            <td>重载配置文件</td>
+                                            <td><code>-</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/pr gui</code></td>
+                                            <td>打开种族选择菜单</td>
+                                            <td><code>-</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>/pr about</code></td>
+                                            <td>关于PonyRace</td>
+                                            <td><code>-</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Permission Section -->
+                        <section id="permission">
+                            <h2><br><br><br>权限节点</h2>
+                            <div class="wiki-card">
+                                <table class="command-table">
+                                    <thead>
+                                        <tr>
+                                            <th>权限</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>ponyrace.admin</code></td>
+                                            <td>允许使用管理员指令</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Config Section -->
+                        <section id="config">
+                            <h2><br><br><br>配置文件</h2>
+                            <div class="wiki-card">
+                                <p>1.5.1版本</p>
+                                <code># PonyRace配置文件<br>
+                                      # 若无特殊标注，配置文件内所有数值皆需填入正整数<br>
+                                      <br>
+                                      messages:<br>
+                                        # 插件消息前缀<br>
+                                        prefix: "&8[&bPonyRace&8]&r "<br>
+                                      <br>
+                                      settings:<br>
+                                        selection:<br>
+                                          # 是否在无种族玩家加入时显示种族选择菜单<br>
+                                          show: true<br>
+                                          # 是否使用效率更低的方式来兼容登录插件<br>
+                                          # 如果种族选择窗口被登录插件卡没，请启用此选项<br>
+                                          # 该选项启用后会覆盖“强制无种族玩家选择种族”选项<br>
+                                          login-plugin-support: false<br>
+                                          # 是否强制无种族玩家选择种族<br>
+                                          force: true<br>
+                                        consume:<br>
+                                          # 左键技能魔力消耗量<br>
+                                          mana-left: 20<br>
+                                          # 右键技能魔力消耗量<br>
+                                          mana-right: 50<br>
+                                          # 飞行时每秒体力消耗量<br>
+                                          stamina: 1<br>
+                                          # 冲刺技能体力消耗量<br>
+                                          stamina-boost: 20<br>
+                                          # 玩家飞行速度超过阈值后每增加1速度所额外消耗的体力（可小数）<br>
+                                          stamina-move: 0.5<br>
+                                          # 最大额外消耗体力<br>
+                                          stamina-move-max: 3<br>
+                                          # 飞行速度阈值（方块/秒）<br>
+                                          stamina-move-threshold: 8<br>
+                                          # 发怒时每0.25秒怒气消耗量<br>
+                                          enrage: 3<br>
+                                        regen:<br>
+                                          # 每秒魔力恢复量<br>
+                                          mana: 1<br>
+                                          # 每秒体力恢复量<br>
+                                          stamina: 2<br>
+                                          # 每0.25秒怒气恢复量<br>
+                                          enrage: 1<br>
+                                        cooldown:<br>
+                                          # 魔法技能冷却（秒）<br>
+                                          mana: 1<br>
+                                          # 冲刺技能冷却（秒）<br>
+                                          boost: 1<br>
+                                          # 吃食物/宝石冷却，不影响原版食物食用速度（秒）<br>
+                                          eat: 1<br>
+                                          # 龙族火球技能冷却（秒）<br>
+                                          dragon-fire: 30<br>
+                                          # 在体力耗尽后需要恢复到多少体力才能继续飞行<br>
+                                          fly: 20<br>
+                                          # 发怒所需要的最低怒气值<br>
+                                          enrage: 20
+                                </code>
+                            </div>
+                        </section>
+
+                        <!-- Status Section -->
+                        <section id="status">
+                            <h2><br><br><br>统计</h2>
+                            <img src="https://bstats.org/signatures/bukkit/PonyRace.svg">
+                        </section>
+                    </div>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-2 -->
+    <!-- end of wiki content -->
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="color:#f4f9ff;margin-bottom:0rem"> <a style="font-size: 0.9em;">友情外链</a><br> <a target="_blank" href="https://eqmemory.cn/">马国记忆</a>&nbsp;·&nbsp;<a target="_blank" href="https://www.eqcommunity.cn/">小马社区</a>&nbsp;·&nbsp;<a target="_blank" href="https://raku404.com/">羽梦千景</a>&nbsp;·&nbsp;<a target="_blank" href="https://mlp.yzds.fun/">Pudding</a></p>
+                    <p><a target="_blank" href="https://github.com/Equestriarcadia">Copyright © Equestriarcadia</a></p>
+                    <p><span id="js-rotating">
+                        Friendship is magic,
+                        友谊是魔法,
+                        千景是甜贝儿，甜贝儿是千景, 
+                        红温了, 
+                        《你们管理怎么都那么容易红温》,
+                        都是开创造拿的.jpg, 
+                        最新消息：科学家发现，吃饭可以缓解饥饿, 
+                        原神，____, 
+                        笨蛋, 
+                        命令 /co i 可以查熊哦, 
+                        Can't keep up!
+                    </span></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../static/js/jquery.magnific-popup.min.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../static/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="../static/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
