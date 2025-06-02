@@ -2637,3 +2637,137 @@ a:hover.back-to-top {
         transform: translateY(-3px) !important;
     }
 }
+
+.sidebar-nav {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-nav-header {
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.sidebar-nav-header h4 {
+    color: #484a46;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.sidebar-nav-menu {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.sidebar-nav-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav-menu a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #484a46;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.sidebar-nav-menu a:hover,
+.sidebar-nav-menu a:focus {
+    background-color: #e9ecef;
+    color: #27b0ff;
+}
+
+.sidebar-nav-menu a.active {
+    background-color: #27b0ff;
+    color: white;
+}
+
+.sidebar-submenu {
+    list-style: none;
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.wiki-content {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.wiki-content section {
+    margin-bottom: 3rem;
+}
+
+.wiki-content h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.wiki-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.wiki-content h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.wiki-card {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #27b0ff;
+}
+
+.wiki-card.warning {
+    border-left-color: #ff6b6b;
+    background-color: #fff5f5;
+}
+
+.command-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.command-table th,
+.command-table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+.command-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.command-table code {
+    background-color: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+    font-family: monospace;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar-nav {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
