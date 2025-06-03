@@ -1,9 +1,5 @@
         const API_URL = `http://120.27.148.201:3000/api/services`;
 
-        async function fetchNodeData() {
-          const response = await fetch(API_URL);
-        }
-
         const nodeDataContainer = document.getElementById('nodeData');
         const refreshBtn = document.getElementById('refreshBtn');
 
