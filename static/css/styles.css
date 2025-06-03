@@ -2771,3 +2771,123 @@ a:hover.back-to-top {
         margin-bottom: 2rem;
     }
 }
+
+.node-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+        
+.node-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+	border: 1px solid #7a7a7a2a;
+    transition: transform 0.3s ease;
+}
+        
+.node-card:hover {
+    transform: translateY(-5px);
+}
+
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.node-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.node-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-200 {
+    background-color: #2ecc71;
+}
+
+.status-400, .status-403, .status-500 {
+    background-color: #e74c3c;
+}
+
+.info-section {
+    margin-bottom: 15px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #7f8c8d;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.info-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.progress-container {
+    margin-top: 5px;
+    height: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #3498db;
+    transition: width 0.5s ease;
+}
+
+.loading {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.error-message {
+    text-align: center;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fdecea;
+    border-radius: 5px;
+}
+
+#refreshBtn {
+    margin: 20px 0;
+}
