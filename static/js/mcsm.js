@@ -24,7 +24,6 @@
                 <div class="node-card">
                     <div class="node-header">
                         <div class="node-title">EQAD - 00${index + 1}</div>
-                        <div class="node-status status-200">在线</div>
                     </div>
                     
                     <div class="info-section">
@@ -32,19 +31,19 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="info-label">系统类型</div>
-                                <div class="info-value">${node。system。type} ${node。system。release}</div>
+                                <div class="info-value">${node.system.type} ${node.system.release}</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">平台</div>
-                                <div class="info-value">${node。system。platform}</div>
+                                <div class="info-value">${node.system.platform}</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">节点版本</div>
-                                <div class="info-value">${node。version}</div>
+                                <div class="info-value">${node.version}</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">实例总数</div>
-                                <div class="info-value">${node。instance.running}/${node.instance.total}</div>
+                                <div class="info-value">${node.instance.running}/${node.instance.total}</div>
                             </div>
                         </div>
                     </div>
@@ -68,11 +67,11 @@
                             </div>
                             <div class="info-item">
                                 <div class="info-label">总内存</div>
-                                <div class="info-value">${formatBytes(node。system.totalmem)}</div>
+                                <div class="info-value">${formatBytes(node.system.totalmem)}</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">可用内存</div>
-                                <div class="info-value">${formatBytes(node。system.freemem)}</div>
+                                <div class="info-value">${formatBytes(node.system.freemem)}</div>
                             </div>
                         </div>
                     </div>
