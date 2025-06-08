@@ -1,4 +1,4 @@
-        const API_URL = `https://api.eqad.fun/api/service`;
+        const API_URL = `https://api.eqad.fun/api/services`;
 
         const nodeDataContainer = document.getElementById('nodeData');
         const refreshBtn = document.getElementById('refreshBtn');
