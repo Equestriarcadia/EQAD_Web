@@ -1,4 +1,4 @@
-        const API_URL = `https://api.eqad.fun/api/services`;
+        const API_URL = `https://api.eqad.fun/api/service`;
 
         const nodeDataContainer = document.getElementById('nodeData');
         const refreshBtn = document.getElementById('refreshBtn');
@@ -92,14 +92,14 @@
                         case 400: errorMessage += '请求参数不正确'; break;
                         case 403: errorMessage += '权限不足'; break;
                         case 500: errorMessage += '服务器错误'; break;
-                        default: errorMessage += `未知错误 (状态码: ${data.status})`;
+                        default: errorMessage += `其他错误 (Code: ${data.status})`;
                     }
-                    nodeDataContainer.innerHTML = `<div class="error-message">${errorMessage}</div>`;
+                    nodeDataContainer.innerHTML = `<div class="loader"><div class="image-loader"><img src="static/image/loading.svg"></div><div class="isloading-line"></div><p style="color:rgb(255, 74, 74)">${errorMessage}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p></div>`;
                     return;
                 }
                 
                 if (!data.data || data.data.length === 0) {
-                    nodeDataContainer.innerHTML = '<div class="error-message">没有可用的节点数据</div>';
+                    nodeDataContainer.innerHTML = '<div class="loader"><div class="image-loader"><img src="static/image/loading.svg"></div><div class="isloading-line"></div><p style="color:rgb(255, 74, 74)">没有可用的节点数据<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p></div>';
                     return;
                 }
                 
@@ -110,7 +110,7 @@
                 
             } catch (error) {
                 console.error('获取节点数据时出错:', error);
-                nodeDataContainer.innerHTML = `<div class="error-message">获取节点数据时出错: ${error.message}</div>`;
+                nodeDataContainer.innerHTML = `<div class="loader"><div class="image-loader"><img src="static/image/loading.svg"></div><div class="isloading-line"></div><p style="color:rgb(255, 74, 74)">获取节点数据时出错: ${error.message}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p></div>`;
             }
         }
 
