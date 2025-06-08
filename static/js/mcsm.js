@@ -1,4 +1,4 @@
-        const API_URL = `https://api.eqad.fun/api/services`;
+        const API_URL = `https://mcsm-api.eqad.fun/api/services`;
 
         const nodeDataContainer = document.getElementById('nodeData');
         const refreshBtn = document.getElementById('refreshBtn');
@@ -81,7 +81,7 @@
 
         async function fetchNodeData() {
             try {
-                nodeDataContainer.innerHTML = '<div class="loader"><div class="image-loader"><img src="static/image/loading.svg"></div><div class="isloading-line"></div><p>正在加载数据……<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p></div>';
+                nodeDataContainer.innerHTML = '<div class="loader"><div class="image-loader"><img src="static/image/loading.svg"></div><div class="isloading-line"></div><p>正在获取节点数据……<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p></div>';
                 
                 const response = await fetch(API_URL);
                 const data = await response.json();

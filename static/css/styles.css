@@ -3096,3 +3096,66 @@ a:hover.back-to-top {
     max-width: 50%;
   }
 }
+
+.server-status {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.server-status.online {
+    border-left: 4px solid #2ecc71;
+}
+
+.server-status.offline {
+    border-left: 4px solid #e74c3c;
+}
+
+.server-status.inloading {
+    border-left: 4px solid #f39c12;
+}
+
+.server-status-content {
+    display: flex;
+    align-items: center;
+}
+
+.server-status-details {
+    flex-grow: 1;
+}
+
+.server-status-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-indicator.online {
+    background-color: #2ecc71;
+}
+
+.status-indicator.offline {
+    background-color: #e74c3c;
+}
+
+.status-indicator.inloading {
+    background-color: #f39c12;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
