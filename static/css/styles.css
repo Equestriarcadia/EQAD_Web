@@ -2835,7 +2835,7 @@ a:hover.back-to-top {
         
 .node-card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 14px;
     padding: 20px;
     width: 100%;
     max-width: 500px;
