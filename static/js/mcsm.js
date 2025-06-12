@@ -18,12 +18,11 @@
         function createNodeCard(node, index) {
             const cpuUsagePercent = (node.system.cpuUsage * 100).toFixed(1);
             const memUsagePercent = (node.system.memUsage * 100).toFixed(1);
-            // <div class="node-title">节点 ${index + 1}: ${node.system.hostname}</div>
 
             return `
                 <div class="node-card">
                     <div class="node-header">
-                        <div class="node-title">EQAD - 00${index + 1}</div>
+                        <div class="node-title">${node.nickname}</div>
                     </div>
                     
                     <div class="info-section">
