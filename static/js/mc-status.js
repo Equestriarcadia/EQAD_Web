@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="server-status-details">
                                 <div class="server-status-title">
                                     <span class="status-indicator online"></span>
-                                    ${server} | 玩家: ${data.players.online}/${data.players.max}
+                                    ${server} - 玩家: ${data.players.online}/${data.players.max}
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="server-status-details">
                                 <div class="server-status-title">
                                     <span class="status-indicator offline"></span>
-                                    ${server} | 无法获取目标服务器信息
+                                    ${server} - 无法获取目标服务器信息
                                 </div>
                             </div>
                         </div>
