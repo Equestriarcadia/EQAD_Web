@@ -1,8 +1,6 @@
-const API_URL = `https://api.eqad.fun/mc-status/ping-mc?host=${host}&port=${port}`;
-
 document.addEventListener('DOMContentLoaded', function() {
     const serverStatusElements = document.querySelectorAll('.server-status');
-    
+
     serverStatusElements.forEach(element => {
         const server = element.getAttribute('data-server');
         const port = element.getAttribute('data-port') || 25565;
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchServerStatus(host, port) {
-    return fetch(API_URL)
+    return fetch(`https://api.eqad.fun/mc-status/ping-mc?host=${host}&port=${port}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network Error');
