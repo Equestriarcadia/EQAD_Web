@@ -2777,8 +2777,9 @@ a:hover.back-to-top {
 .wiki-card {
     background-color: #f8f9fa;
     border-radius: 0.25rem;
-    padding: 1.5rem;
+    padding: 1.3rem;
     margin-bottom: 1.5rem;
+	border: 1px solid #7a7a7a2a;
     border-left: 4px solid #27b0ff;
 }
 
@@ -2960,9 +2961,10 @@ a:hover.back-to-top {
 }
 
 .banitem {
-	background-color: #f3f3f3;
+	background-color: white;
 	padding: 0.8rem;
 	border-radius: 0.5rem;
+	border: 1px solid #7a7a7a2a;
 	margin-bottom: 1rem;
 }
 
@@ -3155,4 +3157,10 @@ a:hover.back-to-top {
     0% { opacity: 1; }
     50% { opacity: 0.5; }
     100% { opacity: 1; }
+}
+
+.b-border {
+    background-color: #f5f5f57a;
+    margin: 20px 15px;
+    width: calc(100% - 30px);
 }
