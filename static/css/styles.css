@@ -976,7 +976,6 @@ input[type='checkbox'] {
 	position: absolute;
 	width: 6rem;
 	height: 6rem;
-	background: url('http://www.ranmc.cn/images/hexagon-green.svg') center center no-repeat;
 	background-size: 6rem 6rem;
 }
 
@@ -1657,13 +1656,11 @@ input[type='checkbox'] {
 	left: 0;
 	width: 1.75rem;
 	height: 1.75rem;
-	background: url('http://www.ranmc.cn/images/hexagon-green.svg') center center no-repeat;
 	background-size: 1.75rem 1.75rem;
 	transition: all 0.2s ease;
 }
 
 .basic-2 .fa-stack:hover .hexagon {
-	background: url('http://www.ranmc.cn/images/hexagon-white.svg') center center no-repeat;
 	background-size: 1.75rem 1.75rem;
 }
 
@@ -1798,13 +1795,11 @@ input[type='checkbox'] {
 	position: absolute;
 	width: 3.25rem;
 	height: 3.25rem;
-	background: url('http://www.ranmc.cn/images/hexagon-green.svg') center center no-repeat;
 	background-size: 3.25rem 3.25rem;
 	transition: all 0.2s ease;
 }
 
 .form-2 .fa-stack:hover .hexagon {
-	background: url('http://www.ranmc.cn/images/hexagon-white.svg') center center no-repeat;
 	background-size: 3.25rem 3.25rem;
 }
 
@@ -2157,13 +2152,11 @@ a:hover.back-to-top {
 		width: 1.625rem;
 		height: 1.625rem;
 		position: absolute;
-		background: url('http://www.ranmc.cn/images/hexagon-green.svg') center center no-repeat;
 		background-size: 1.625rem 1.625rem;
 		transition: all 0.2s ease;
 	}
 
 	.navbar-custom .fa-stack:hover .hexagon {
-		background: url('http://www.ranmc.cn/images/hexagon-white.svg') center center no-repeat;
 		background-size: 1.625rem 1.625rem;
 	}
 	
