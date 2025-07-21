@@ -3086,6 +3086,12 @@ a:hover.back-to-top {
     flex-basis: 30%; /* 小屏幕每行2个 */
     max-width: 50%;
   }
+
+  .titlebg {
+    width: 3%;
+	height: 3%;
+	box-shadow: 0px 0px 25rem 19rem #e5e5e5;
+  }
 }
 
 .server-status {
