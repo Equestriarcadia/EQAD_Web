@@ -3088,9 +3088,8 @@ a:hover.back-to-top {
   }
 
   .titlebg {
-    width: 3%;
-	height: 3%;
-	box-shadow: 0px 0px 25rem 19rem #e5e5e5;
+	background-color: #e5e5e57e;
+	box-shadow: 0px 0px 16rem 19rem #e5e5e57e;
   }
 }
 
