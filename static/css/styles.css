@@ -839,7 +839,7 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../image/bg.jpg') top center;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../image/bg.webp') top center;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
