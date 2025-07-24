@@ -1390,6 +1390,13 @@ strong {
     background-color: #fff5f5;
 }
 
+.wiki-img {
+	height: 400px;
+	width: auto;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
 .command-table {
     width: 100%;
     border-collapse: collapse;
