@@ -1431,6 +1431,14 @@ strong {
     font-family: monospace;
 }
 
+@media (max-width: 992px) {
+	.command-table th,
+	.command-table td {
+   		padding: 0.25rem;
+		font-size: 13px;
+	}
+}
+
 .faq-item {
     margin-bottom: 1rem;
 }

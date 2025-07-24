@@ -108,8 +108,8 @@
     	            const targetPosition = targetElement.offsetTop;
     	            const targetHeight = targetElement.offsetHeight;
                 
-    	            if (scrollPosition >= targetPosition - 149 && 
-    	                scrollPosition < targetPosition + targetHeight - 100) {
+    	            if (scrollPosition >= targetPosition + 200 && 
+    	                scrollPosition < targetPosition + targetHeight + 200) {
     	                link.classList.add('active');
     	            } else {
     	                link.classList.remove('active');
