@@ -1350,6 +1350,16 @@ strong {
     margin-bottom: 0.5rem;
 }
 
+@media (max-width: 992px) {
+	.sidebar-nav-header {
+		display: none;
+	}
+	
+	.sidebar-nav-menu {
+		display: none;
+    }
+}
+
 .wiki-content {
     padding: 1.5rem;
     background-color: white;
