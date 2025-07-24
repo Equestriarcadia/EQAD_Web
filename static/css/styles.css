@@ -1388,7 +1388,7 @@ strong {
 
 .wiki-card {
     background-color: #f8f9fa;
-    border-radius: 0.25rem;
+    border-radius: 10px;
     padding: 1.3rem;
     margin-bottom: 1.5rem;
 	border: 1px solid #7a7a7a2a;
