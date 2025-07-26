@@ -58,7 +58,7 @@ h4 {
 
 h5 {
 	color: #484a46;
-	font: 700 1.125rem/1.5rem 'Jetbrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo', 'Courier New', Courier, monospace;
+	font: 700 1.125rem/1.5rem "Montserrat", sans-serif;
 }
 
 h6 {
@@ -889,6 +889,11 @@ strong {
 
 .ex-header h1 {
 	color: #3f3f3f;
+}
+
+.ex-header h5 {
+	color: #484a46;
+	font: 700 1.125rem/1.5rem 'Jetbrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo', 'Courier New', Courier, monospace;
 }
 
 .ex-basic-1 {
