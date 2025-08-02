@@ -1406,8 +1406,8 @@ strong {
 }
 
 .wiki-img {
-	height: 400px;
-	width: auto;
+	height: auto;
+	width: 400px;
 	border-radius: 10px;
 	margin-bottom: 20px;
 }
