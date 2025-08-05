@@ -1412,6 +1412,12 @@ strong {
 	margin-bottom: 20px;
 }
 
+@media (max-width: 992px) {
+	.wiki-img {
+		width: 300px;
+	}
+}
+
 .command-table {
     width: 100%;
     border-collapse: collapse;
