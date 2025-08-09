@@ -1599,6 +1599,33 @@ strong {
     font-weight: bold;
 }
 
+.status-info {
+    display: block;
+	padding-bottom: 25px;
+}
+
+#lastUpdated {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.refresh-btn {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    color: #4e4e4e;
+}
+
+.refresh-btn:hover {
+    background-color: #f0f0f0;
+    color: #0074b7;
+}
+
+.refresh-btn svg {
+    display: block;
+}
+
 .progress-container {
     margin-top: 5px;
     height: 10px;
