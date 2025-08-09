@@ -1599,16 +1599,6 @@ strong {
     font-weight: bold;
 }
 
-.status-info {
-    display: block;
-	padding-bottom: 25px;
-}
-
-#lastUpdated {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-}
-
 .refresh-btn {
     border: none;
     padding: 5px;

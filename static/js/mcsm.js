@@ -231,7 +231,6 @@ function createOfflineNodeCard(nodeName) {
 
 async function fetchNodeData() {
     try {
-        document.getElementById('lastUpdated').textContent = '最后更新: -';
         nodeDataContainer.innerHTML = '';
         NODE_LIST.forEach(nodeName => {
             nodeDataContainer.innerHTML += createLoadingNodeCard(nodeName);
@@ -239,9 +238,6 @@ async function fetchNodeData() {
 
         const response = await fetch(API_URL);
         const data = await response.json();
-        
-        const updateTime = data.timestamp ? new Date(data.timestamp).toLocaleString() : new Date().toLocaleString();
-        document.getElementById('lastUpdated').textContent = `最后更新: ${updateTime}`;
         
         if (data.status !== 200) {
             setTimeout(() => {
@@ -272,7 +268,6 @@ async function fetchNodeData() {
         }, DISPLAY_DELAY);
         
     } catch (error) {
-        document.getElementById('lastUpdated').textContent = `最后更新: ${new Date().toLocaleString()}`;
         setTimeout(() => {
             nodeDataContainer.innerHTML = '';
             NODE_LIST.forEach(nodeName => {
