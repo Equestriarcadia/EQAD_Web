@@ -45,7 +45,7 @@ function createLoadingNodeCard(nodeName) {
                             <div class="info-label">实例总数</div>
                             <div class="info-value loading-text"></div>
                         </div>
-                        <div>
+                        <div class="info-item">
                             <div class="info-label">节点版本</div>
                             <div class="info-value loading-text"></div>
                         </div>
@@ -118,7 +118,7 @@ function createNodeCard(node) {
                             <div class="info-label">实例总数</div>
                             <div class="info-value">${node.instance.running}/${node.instance.total}</div>
                         </div>
-                        <div>
+                        <div class="info-item">
                             <div class="info-label">节点版本</div>
                             <div class="info-value">${node.version}</div>
                         </div>
@@ -185,7 +185,7 @@ function createOfflineNodeCard(nodeName) {
                             <div class="info-label">实例总数</div>
                             <div class="info-value">-/-</div>
                         </div>
-                        <div>
+                        <div class="info-item">
                             <div class="info-label">节点版本</div>
                             <div class="info-value">-</div>
                         </div>
