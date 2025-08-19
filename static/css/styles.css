@@ -1595,7 +1595,7 @@ strong {
 }
 
 .info-value {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -1639,6 +1639,12 @@ strong {
     0% { opacity: 1; }
     50% { opacity: 0.5; }
     100% { opacity: 1; }
+}
+
+@media (max-width: 1199px) {
+	.node-card {
+	    height: 260px;
+    }
 }
 
 @media (max-width: 992px) {

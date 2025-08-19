@@ -7,6 +7,12 @@ const NODE_LIST = [
     "EQAD-003"
 ];
 
+const NODE_CPU_INFO = {
+    "EQAD-001": "AMD Ryzen 9 9900X",
+    "EQAD-002": "Intel Core i9-13900K",
+    "EQAD-003": "Intel Xeon X3430"
+};
+
 const nodeDataContainer = document.getElementById('nodeData');
 const refreshBtn = document.getElementById('refreshBtn');
 
@@ -20,6 +26,28 @@ function formatBytes(bytes, decimals = 2) {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
             
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+function formatTimestamp(timestamp) {
+    if (!timestamp) return '-';
+    
+    const date = new Date(timestamp);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+function formatLoadAvg(loadavg) {
+    if (!loadavg || !Array.isArray(loadavg) || loadavg.length < 3 || 
+        (loadavg[0] === 0 && loadavg[1] === 0 && loadavg[2] === 0)) {
+        return '-';
+    }
+    return `${loadavg[0].toFixed(2)}, ${loadavg[1].toFixed(2)}, ${loadavg[2].toFixed(2)}`;
 }
 
 function createLoadingNodeCard(nodeName) {
@@ -38,7 +66,7 @@ function createLoadingNodeCard(nodeName) {
                             <div class="info-value loading-text"></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">平台</div>
+                            <div class="info-label">CPU</div>
                             <div class="info-value loading-text"></div>
                         </div>
                         <div class="info-item">
@@ -46,7 +74,7 @@ function createLoadingNodeCard(nodeName) {
                             <div class="info-value loading-text"></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">节点版本</div>
+                            <div class="info-label">服务器时间</div>
                             <div class="info-value loading-text"></div>
                         </div>
                     </div>
@@ -70,11 +98,11 @@ function createLoadingNodeCard(nodeName) {
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">总内存</div>
+                            <div class="info-label">系统负载</div>
                             <div class="info-value loading-text"></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">可用内存</div>
+                            <div class="info-label">总内存</div>
                             <div class="info-value loading-text"></div>
                         </div>
                     </div>
@@ -96,6 +124,10 @@ function createNodeCard(node) {
     const cpuBarColor = cpuUsagePercent > 80 ? "background-color: #e74c3c;" : "";
     const memBarColor = memUsagePercent > 80 ? "background-color: #e74c3c;" : "";
 
+    const cpuInfo = NODE_CPU_INFO[node.nickname] || "-";
+    const lastUpdateTime = formatTimestamp(node.timestamp);
+    const loadAvgInfo = formatLoadAvg(node.system.loadavg);
+
     return `
         <div class="node-card">
             <div class="node-header">
@@ -111,16 +143,16 @@ function createNodeCard(node) {
                             <div class="info-value">${node.system.type} ${node.system.release}</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">平台</div>
-                            <div class="info-value">${node.system.platform}</div>
+                            <div class="info-label">CPU</div>
+                            <div class="info-value">${cpuInfo}</div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">实例总数</div>
                             <div class="info-value">${node.instance.running}/${node.instance.total}</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">节点版本</div>
-                            <div class="info-value">${node.version}</div>
+                            <div class="info-label">服务器时间</div>
+                            <div class="info-value">${lastUpdateTime}</div>
                         </div>
                     </div>
                 </div>
@@ -143,12 +175,12 @@ function createNodeCard(node) {
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">总内存</div>
-                            <div class="info-value">${formatBytes(node.system.totalmem)}</div>
+                            <div class="info-label">系统负载</div>
+                            <div class="info-value">${loadAvgInfo}</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">可用内存</div>
-                            <div class="info-value">${formatBytes(node.system.freemem)}</div>
+                            <div class="info-label">总内存</div>
+                            <div class="info-value">${formatBytes(node.system.totalmem)}</div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +210,7 @@ function createOfflineNodeCard(nodeName) {
                             <div class="info-value">-</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">平台</div>
+                            <div class="info-label">CPU</div>
                             <div class="info-value">-</div>
                         </div>
                         <div class="info-item">
@@ -186,7 +218,7 @@ function createOfflineNodeCard(nodeName) {
                             <div class="info-value">-/-</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">节点版本</div>
+                            <div class="info-label">服务器时间</div>
                             <div class="info-value">-</div>
                         </div>
                     </div>
@@ -210,11 +242,11 @@ function createOfflineNodeCard(nodeName) {
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">总内存</div>
+                            <div class="info-label">系统负载</div>
                             <div class="info-value">-</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">可用内存</div>
+                            <div class="info-label">总内存</div>
                             <div class="info-value">-</div>
                         </div>
                     </div>
