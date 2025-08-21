@@ -867,19 +867,6 @@ strong {
 	color: #61d1ff;
 }
 
-.copyright {
-	padding-top: 1rem;
-	padding-bottom: 0.5rem;
-	background-color: #2c2c2c;
-	text-align: center;
-}
-
-.copyright p,
-.copyright a {
-	color: #dfe5ec;
-	text-decoration: none;
-}
-
 .ex-header {
 	padding-top: 6rem;
 	padding-bottom: 2rem;
@@ -1986,4 +1973,136 @@ strong {
     background-color: #f5f5f57a;
     margin: 20px 15px;
     width: calc(100% - 30px);
+}
+
+.copyright {
+    padding: 2rem 0;
+    background: url('../image/footer-bg.jpg') center/cover;
+    position: relative;
+    color: #f4f9ff;
+    text-align: center;
+}
+
+.copyright p,
+.copyright a {
+	color: #dfe5ec;
+	text-decoration: none;
+}
+
+.copyright::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+.copyright-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.copyright-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.copyright-logo img {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+}
+
+.copyright-logo-text a {
+    font-size: 0.9rem;
+}
+
+.copyright-logo-text p {
+    font-size: 0.8rem;
+}
+
+.copyright-info {
+    flex: 1;
+    text-align: right;
+}
+
+.copyright-links {
+    margin-bottom: 1rem;
+}
+
+.copyright-text a,
+.copyright-logo-text a,
+.copyright-links a {
+    color: #f4f9ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.copyright-text a:hover,
+.copyright-logo-text a:hover,
+.copyright-links a:hover {
+    color: #61d1ff;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.rotating-text {
+    width: 100%;
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1250px) {
+    .copyright-container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .copyright-container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 850px) {
+    .copyright-container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .copyright-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .copyright-logo,
+    .copyright-info {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    
+    .copyright-logo {
+        margin-bottom: 1.5rem;
+    }
+    
+    .copyright-links a {
+        margin: 0 0.5rem;
+    }
 }
