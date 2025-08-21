@@ -2028,8 +2028,9 @@ strong {
     font-size: 0.9rem;
 }
 
-.copyright-logo-text p {
+.copyright-logo-text span {
     font-size: 0.8rem;
+	margin-bottom: none;
 }
 
 .copyright-info {
@@ -2038,7 +2039,7 @@ strong {
 }
 
 .copyright-links {
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
 }
 
 .copyright-text a,
@@ -2057,12 +2058,11 @@ strong {
 
 .copyright-text {
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.85rem;
 }
 
 .rotating-text {
     width: 100%;
-    margin-top: 1rem;
     font-style: italic;
     font-size: 0.85rem;
 }
