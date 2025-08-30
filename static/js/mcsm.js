@@ -10,7 +10,7 @@ const NODE_LIST = [
 const NODE_CPU_INFO = {
     "EQAD-001": "AMD Ryzen 9 9900X",
     "EQAD-002": "Intel Core i9-13900K",
-    "EQAD-003": "Intel Xeon X3430"
+    "EQAD-003": "AMD Ryzen 7 5800X"
 };
 
 const nodeDataContainer = document.getElementById('nodeData');
