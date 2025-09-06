@@ -140,7 +140,7 @@ function createNodeCard(node) {
                     <div class="info-grid">
                         <div class="info-item">
                             <div class="info-label">系统类型</div>
-                            <div class="info-value">${node.system.type} ${node.system.release}</div>
+                            <div class="info-value">${node.system.type}</div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">CPU</div>
@@ -310,4 +310,5 @@ async function fetchNodeData() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchNodeData);
+
 refreshBtn.addEventListener('click', fetchNodeData);
