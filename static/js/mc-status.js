@@ -40,26 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="server-status-details">
                                 <div class="server-status-title">
                                     <span class="status-indicator offline"></span>
-                                    ${server} - 无法获取目标服务器信息
+                                    ${server} - 离线
                                 </div>
                             </div>
                         </div>
                     `;
                 }
-            })
-            .catch(error => {
-                element.classList.remove('inloading');
-                element.classList.add('offline');
-                element.innerHTML = `
-                    <div class="server-status-content">
-                        <div class="server-status-details">
-                            <div class="server-status-title">
-                                <span class="status-indicator offline"></span>
-                                获取API数据时出现错误
-                            </div>
-                        </div>
-                    </div>
-                `;
             });
     });
 });
