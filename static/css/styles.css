@@ -1481,8 +1481,9 @@ strong {
 .node-title {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #2bb1ff;
+    color: #333333;
     margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .node-footer {
@@ -1491,6 +1492,7 @@ strong {
     left: 20px;
     display: flex;
     align-items: center;
+	margin-left: 5px;
 }
 
 .node-status {
@@ -1505,7 +1507,7 @@ strong {
 .node-status-text {
     font-size: 0.85rem;
     color: #7f8c8d;
-    margin-left: 5px;
+    margin-left: -4px;
 }
 
 .node-status-indicator {
