@@ -572,7 +572,7 @@ strong {
 }
 
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../image/bg.webp') top center;
+	background: #fff;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
