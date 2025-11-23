@@ -1423,6 +1423,7 @@ strong {
 
 .command-table code {
     background-color: #e9ecef;
+	letter-spacing: 1px;
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
     font-family: monospace;

@@ -140,7 +140,7 @@
                         
                         <section id="dbimg">
                             <h2><br><br><br>DBImg - 搜图</h2>
-                            <p>该功能可以通过标签（tags）在呆站进行搜图</p>
+                            <p>该功能可以通过标签（tags）在呆站进行搜图，<a target="_blank" href="https://github.com/leonsu-l/nonebot_plugin_phimg">已开源至Github</a></p>
                             <img class="wiki-img" src="../static/image/wiki/cyanflow/dbimg.gif">
                             <table class="command-table">
                                 <thead>
@@ -151,34 +151,61 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><code>。搜图 --add [&lt;tags&gt; ...]</code></td>
-                                        <td>添加强制标签，搜图时会强制带上这些标签</td>
+                                        <td><code>。搜图 [&lt;tags|distance&gt;]</code></td>
+                                        <td>
+                                            输入标签为tags搜图（多个标签使用逗号分割，全角半角均可）<br>
+                                            输入匹配距离为图搜图，可引用消息进行图搜图
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><code>。搜图 --rm [&lt;tags&gt; ...]</code></td>
-                                        <td>删除强制标签</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>。搜图 --list</code></td>
-                                        <td>获取强制标签列表</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>。搜图 --on/--off</code></td>
-                                        <td>开关搜图功能 [默认开启]</td>
+                                        <td><code>。搜图 --tags</code></td>
+                                        <td>获取当前群聊内置标签列表</td>
                                     </tr>
                                     <tr>
                                         <td><code>。搜图 --status</code></td>
-                                        <td>查看搜图功能状态</td>
+                                        <td>获取当前群聊的搜图功能状态</td>
                                     </tr>
                                     <tr>
-                                        <td><code>。搜图 --onglobal/--offglobal</code></td>
+                                        <td><code>。搜图 --pp [PER_PAGE]</code></td>
+                                        <td>每页结果数量 [默认为50]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 --p [PAGE]</code></td>
+                                        <td>页码 [默认为1]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 --sf [SF]</code></td>
+                                        <td>排序字段 [默认为score]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 --sd [SD]</code></td>
+                                        <td>排序方向 [默认为desc]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 --i [INDEX]</code></td>
+                                        <td>选择结果索引 [默认为-1（即随机），最大值应为per_page减1]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 -c --add [&lt;tags&gt; ...]</code></td>
+                                        <td>添加当前群聊的内置标签，搜图时会强制带上这些标签</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 -c --rm [&lt;tags&gt; ...]</code></td>
+                                        <td>删除当前群聊的内置标签</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 -c --on/--off</code></td>
+                                        <td>开关搜图功能 [默认开启]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>。搜图 -c --onglobal/--offglobal</code></td>
                                         <td>开关全局标签</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="wiki-card warning">
                                 <h4>警告</h4>
-                                <p>如果你关闭了全局标签并不额外添加强制标签，机器人可能会搜出：性暗示图、淫秽图、G图、鉴证图等<br>
+                                <p>如果你关闭了全局标签并不额外添加内置标签，机器人可能会搜出：涩图、G图、鉴证图等<br>
                                 <strong>如果你一定要关闭全局标签，请自行承担可能的炸群风险</strong></p>
                             </div>
                         </section>
