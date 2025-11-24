@@ -1761,37 +1761,6 @@ strong {
 	border-radius: 0.5rem;
 }
 
-.banname {
-	font-family: 'Cascadia Code', 'Fira Code', 'Menlo', 'Courier New', Courier, monospace;
-	margin-left: 0.5rem;
-
-	font-size: 30px;
-}
-
-.banitem {
-	background-color: white;
-	padding: 0.8rem;
-	border-radius: 0.5rem;
-	border: 1px solid #7a7a7a2a;
-	margin-bottom: 1rem;
-}
-
-.bandetial {
-	color: #535353;
-	margin-bottom: -1rem;
-	margin-left: 0.5rem;
-}
-
-.banfoot {
-	text-align: right;
-	margin-top: -1.6rem;
-	margin-bottom: -1.5rem;
-	margin-right: 0.5rem;
-	font-size: 30px;
-	font-weight: 800;
-	color: #00000032;
-}
-
 .screenshot-grid {
     position: absolute;
     top: 42px;
