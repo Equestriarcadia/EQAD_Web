@@ -1332,7 +1332,7 @@ strong {
 }
 
 .sidebar-nav-menu a.active {
-    background-color: #27b0ff;
+    background-color: #6cc9ff;
     color: white;
 }
 
@@ -1383,13 +1383,12 @@ strong {
     background-color: #f8f9fa;
     border-radius: 10px;
     padding: 1.3rem;
+	padding-left: 1.9rem;
     margin-bottom: 1.5rem;
 	border: 1px solid #7a7a7a2a;
-    border-left: 4px solid #27b0ff;
 }
 
 .wiki-card.warning {
-    border-left-color: #ff6b6b;
     background-color: #fff5f5;
 }
 
@@ -1755,11 +1754,12 @@ strong {
 
 .codeaddr {
 	background-color: #393939;
-	font-family: 'Jetbrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo', 'Courier New', Courier, monospace;
+	font-family: 'Jetbrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo', 'Courier New', "Noto Sans SC", Courier, monospace;
 	font-weight: bold;
 	font-style: none;
 	color: #dbdbdb;
 	padding: .875rem;
+	padding-top: 1.1rem;
 	border-radius: 0.5rem;
 }
 
@@ -1883,21 +1883,10 @@ strong {
     background-color: #f8f9fa;
     border-radius: 8px;
     padding: 15px;
+	padding-left: 20px;
     margin-top: 20px;
     border: 1px solid #e0e0e0;
     font-family: 'Noto Sans SC', sans-serif;
-}
-
-.server-status.online {
-    border-left: 4px solid #2ecc71;
-}
-
-.server-status.offline {
-    border-left: 4px solid #e74c3c;
-}
-
-.server-status.inloading {
-    border-left: 4px solid #f39c12;
 }
 
 .server-status-content {
