@@ -2048,3 +2048,10 @@ strong {
         margin: 0 0.5rem;
     }
 }
+
+.warning-icon {
+    width: auto;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 9px;
+}
