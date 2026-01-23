@@ -2068,7 +2068,7 @@ strong {
     border-radius: 10px;
     background: transparent;
     background: #e6e6e6;
-    color: rgb(53, 53, 53);
+    color: rgb(61, 61, 61);
 	border: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -2076,7 +2076,7 @@ strong {
 }
 
 .page-btn.active {
-    background: #3db8ff;
+    background: #6cc9ff;
     color: white;
 }
 
