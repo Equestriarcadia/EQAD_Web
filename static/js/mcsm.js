@@ -326,16 +326,31 @@ function initPagination() {
 
     pageBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            if (btn.classList.contains('active')) return;
+
             const pageNum = btn.getAttribute('data-page');
+            const targetPage = document.getElementById(`status-page-${pageNum}`);
+            const currentPage = document.querySelector('.status-page.active');
             
             pageBtns.forEach(b => b.classList.remove('active'));
-            pages.forEach(p => p.classList.remove('active'));
-            
             btn.classList.add('active');
-            document.getElementById(`status-page-${pageNum}`).classList.add('active');
-            
-            if (pageNum === '2') {
-                renderAvailability();
+
+            if (currentPage) {
+                currentPage.classList.add('fadeOut');
+                
+                setTimeout(() => {
+                    currentPage.classList.remove('active', 'fadeOut');
+                    targetPage.classList.add('active');
+                    
+                    if (pageNum === '2') {
+                        renderAvailability();
+                    }
+                }, 300);
+            } else {
+                targetPage.classList.add('active');
+                if (pageNum === '2') {
+                    renderAvailability();
+                }
             }
         });
     });

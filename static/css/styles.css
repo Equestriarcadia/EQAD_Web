@@ -2086,7 +2086,11 @@ strong {
 
 .status-page.active {
     display: block;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.status-page.fadeOut {
+    animation: fadeOut 0.3s ease forwards !important;
 }
 
 .availability-container {
