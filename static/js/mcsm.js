@@ -1,5 +1,7 @@
-const API_URL = `https://api.eqad.fun/mcsm/api/services/`;
+const API_URL = `https://api.eqad.fun/mcsm/api/services`;
+const AVAILABILITY_API_URL = 'https://api.eqad.fun/monitor';
 
+const MAX_HISTORY_POINTS = 96;
 const DISPLAY_DELAY = 1500;
 const NODE_LIST = [
     "EQAD-001",
@@ -15,9 +17,6 @@ const NODE_CPU_INFO = {
 
 const nodeDataContainer = document.getElementById('nodeData');
 const availabilityContainer = document.getElementById('availabilityData');
-
-const AVAILABILITY_API_URL = 'https://api.eqad.fun/monitor';
-const MAX_HISTORY_POINTS = 96;
 
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
