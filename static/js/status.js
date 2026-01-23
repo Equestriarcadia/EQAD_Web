@@ -17,6 +17,7 @@ const NODE_CPU_INFO = {
 
 const nodeDataContainer = document.getElementById('nodeData');
 const availabilityContainer = document.getElementById('availabilityData');
+let refreshInterval;
 
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
@@ -204,6 +205,25 @@ function createNodeCard(node) {
     `;
 }
 
+function createLoadingAvailabilityCard(nodeName) {
+    return `
+        <div class="uptime-card">
+            <div class="uptime-header">
+                <div class="uptime-title">${nodeName}</div>
+                <div class="uptime-pct loading-text" style="width: 50px;"></div>
+            </div>
+            <div class="uptime-bar">
+                <div class="loading-bar" style="height: 100%; border-radius: 3px;"></div>
+            </div>
+            <div class="uptime-footer">
+                <span>${formatDuration(MAX_HISTORY_POINTS * 15)}前</span>
+                <span>最近</span>
+                <span>现在</span>
+            </div>
+        </div>
+    `;
+}
+
 function createOfflineNodeCard(nodeName) {
     return `
         <div class="node-card">
@@ -341,15 +361,21 @@ function initPagination() {
                     currentPage.classList.remove('active', 'fadeOut');
                     targetPage.classList.add('active');
                     
-                    if (pageNum === '2') {
+                    if (pageNum === '1') {
+                        fetchNodeData();
+                    } else if (pageNum === '2') {
                         renderAvailability();
                     }
+                    resetRefreshTimer();
                 }, 300);
             } else {
                 targetPage.classList.add('active');
-                if (pageNum === '2') {
+                if (pageNum === '1') {
+                    fetchNodeData();
+                } else if (pageNum === '2') {
                     renderAvailability();
                 }
+                resetRefreshTimer();
             }
         });
     });
@@ -359,12 +385,18 @@ async function renderAvailability() {
     if (!availabilityContainer) return;
 
     try {
+        availabilityContainer.innerHTML = '';
+        NODE_LIST.forEach(nodeName => {
+            availabilityContainer.innerHTML += createLoadingAvailabilityCard(nodeName);
+        });
+
         const response = await fetch(AVAILABILITY_API_URL);
         const allHistory = await response.json();
 
         let html = '';
 
-        for (const nodeName in allHistory) {
+        setTimeout(() => {
+            for (const nodeName in allHistory) {
             const history = allHistory[nodeName];
             if (!history || history.length === 0) continue;
 
@@ -404,19 +436,26 @@ async function renderAvailability() {
                     </div>
                 </div>
             `;
-        }
-
-        availabilityContainer.innerHTML = html || '<div class="loading">暂无数据...</div>';
+            }
+            availabilityContainer.innerHTML = html || '<div class="loading">暂无数据...</div>';
+        }, DISPLAY_DELAY);
 
     } catch (error) {
-        availabilityContainer.innerHTML = '<div class="loading">加载失败</div>';
+        setTimeout(() => {
+            availabilityContainer.innerHTML = '<div class="loading">加载失败</div>';
+        }, DISPLAY_DELAY);
     }
 }
 
-function startAvailabilityTimer() {
-    renderAvailability();
-    setInterval(() => {
-        if (document.getElementById('status-page-2').classList.contains('active')) {
+function resetRefreshTimer() {
+    if (refreshInterval) {
+        clearInterval(refreshInterval);
+    }
+
+    refreshInterval = setInterval(() => {
+        if (document.getElementById('status-page-1').classList.contains('active')) {
+            fetchNodeData();
+        } else if (document.getElementById('status-page-2').classList.contains('active')) {
             renderAvailability();
         }
     }, 60000);
@@ -425,5 +464,6 @@ function startAvailabilityTimer() {
 document.addEventListener('DOMContentLoaded', () => {
     fetchNodeData();
     initPagination();
-    startAvailabilityTimer();
+    renderAvailability();
+    resetRefreshTimer();
 });
