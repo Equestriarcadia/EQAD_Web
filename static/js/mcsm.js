@@ -14,7 +14,10 @@ const NODE_CPU_INFO = {
 };
 
 const nodeDataContainer = document.getElementById('nodeData');
-const refreshBtn = document.getElementById('refreshBtn');
+const availabilityContainer = document.getElementById('availabilityData');
+
+const AVAILABILITY_API_URL = 'https://api.eqad.fun/monitor';
+const MAX_HISTORY_POINTS = 96;
 
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
@@ -48,6 +51,14 @@ function formatLoadAvg(loadavg) {
         return '-';
     }
     return `${loadavg[0].toFixed(2)}, ${loadavg[1].toFixed(2)}, ${loadavg[2].toFixed(2)}`;
+}
+
+function formatDuration(minutes) {
+    if (minutes < 60) return `${minutes} 分钟`;
+    const hours = minutes / 60;
+    if (hours < 24) return `${hours % 1 === 0 ? hours : hours.toFixed(1)} 小时`;
+    const days = minutes / 1440;
+    return `${days % 1 === 0 ? days : days.toFixed(1)} 天`;
 }
 
 function createLoadingNodeCard(nodeName) {
@@ -309,6 +320,96 @@ async function fetchNodeData() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', fetchNodeData);
+function initPagination() {
+    const pageBtns = document.querySelectorAll('.page-btn');
+    const pages = document.querySelectorAll('.status-page');
 
-refreshBtn.addEventListener('click', fetchNodeData);
+    pageBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const pageNum = btn.getAttribute('data-page');
+            
+            pageBtns.forEach(b => b.classList.remove('active'));
+            pages.forEach(p => p.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(`status-page-${pageNum}`).classList.add('active');
+            
+            if (pageNum === '2') {
+                renderAvailability();
+            }
+        });
+    });
+}
+
+async function renderAvailability() {
+    if (!availabilityContainer) return;
+
+    try {
+        const response = await fetch(AVAILABILITY_API_URL);
+        const allHistory = await response.json();
+
+        let html = '';
+
+        for (const nodeName in allHistory) {
+            const history = allHistory[nodeName];
+            if (!history || history.length === 0) continue;
+
+            const onlineCount = history.filter(h => h.status === 'online').length;
+            const uptimePct = ((onlineCount / history.length) * 100).toFixed(1);
+
+            let segmentsHtml = '';
+            const emptyPoints = MAX_HISTORY_POINTS - history.length;
+            for (let i = 0; i < emptyPoints; i++) {
+                segmentsHtml += '<div class="uptime-segment none"><span class="tooltip-text">无数据</span></div>';
+            }
+
+            history.forEach(point => {
+                const timeStr = formatTimestamp(point.time);
+                const statusText = point.status === 'online' ? '正常' : '离线';
+                const statusClass = point.status === 'online' ? '' : 'down';
+                segmentsHtml += `
+                    <div class="uptime-segment ${statusClass}">
+                        <span class="tooltip-text">${timeStr}<br>状态: ${statusText}</span>
+                    </div>
+                `;
+            });
+
+            html += `
+                <div class="uptime-card">
+                    <div class="uptime-header">
+                        <div class="uptime-title">${nodeName}</div>
+                        <div class="uptime-pct">${uptimePct}%</div>
+                    </div>
+                    <div class="uptime-bar">
+                        ${segmentsHtml}
+                    </div>
+                    <div class="uptime-footer">
+                        <span>${formatDuration(MAX_HISTORY_POINTS * 15)}前</span>
+                        <span>最近</span>
+                        <span>现在</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        availabilityContainer.innerHTML = html || '<div class="loading">暂无数据...</div>';
+
+    } catch (error) {
+        availabilityContainer.innerHTML = '<div class="loading">加载失败</div>';
+    }
+}
+
+function startAvailabilityTimer() {
+    renderAvailability();
+    setInterval(() => {
+        if (document.getElementById('status-page-2').classList.contains('active')) {
+            renderAvailability();
+        }
+    }, 60000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchNodeData();
+    initPagination();
+    startAvailabilityTimer();
+});
