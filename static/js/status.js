@@ -291,34 +291,34 @@ function createOfflineNodeCard(nodeName) {
     `;
 }
 
-async function fetchNodeData() {
+async function fetchNodeData(isAutoRefresh = false) {
     try {
-        nodeDataContainer.innerHTML = '';
-        NODE_LIST.forEach(nodeName => {
-            nodeDataContainer.innerHTML += createLoadingNodeCard(nodeName);
-        });
+        if (!isAutoRefresh) {
+            nodeDataContainer.innerHTML = '';
+            NODE_LIST.forEach(nodeName => {
+                nodeDataContainer.innerHTML += createLoadingNodeCard(nodeName);
+            });
+        }
 
         const response = await fetch(API_URL);
         const data = await response.json();
         
-        if (data.status !== 200) {
-            setTimeout(() => {
+        const updateContent = () => {
+            if (data.status !== 200) {
                 nodeDataContainer.innerHTML = '';
                 NODE_LIST.forEach(nodeName => {
                     nodeDataContainer.innerHTML += createOfflineNodeCard(nodeName);
                 });
-            }, DISPLAY_DELAY);
-            return;
-        }
-        
-        const nodeMap = {};
-        if (data.data && data.data.length > 0) {
-            data.data.forEach(node => {
-                nodeMap[node.nickname] = node;
-            });
-        }
-        
-        setTimeout(() => {
+                return;
+            }
+            
+            const nodeMap = {};
+            if (data.data && data.data.length > 0) {
+                data.data.forEach(node => {
+                    nodeMap[node.nickname] = node;
+                });
+            }
+            
             nodeDataContainer.innerHTML = '';
             NODE_LIST.forEach(nodeName => {
                 if (nodeMap[nodeName]) {
@@ -327,15 +327,27 @@ async function fetchNodeData() {
                     nodeDataContainer.innerHTML += createOfflineNodeCard(nodeName);
                 }
             });
-        }, DISPLAY_DELAY);
+        };
+
+        if (isAutoRefresh) {
+            updateContent();
+        } else {
+            setTimeout(updateContent, DISPLAY_DELAY);
+        }
         
     } catch (error) {
-        setTimeout(() => {
+        const showError = () => {
             nodeDataContainer.innerHTML = '';
             NODE_LIST.forEach(nodeName => {
                 nodeDataContainer.innerHTML += createOfflineNodeCard(nodeName);
             });
-        }, DISPLAY_DELAY);
+        };
+
+        if (isAutoRefresh) {
+            showError();
+        } else {
+            setTimeout(showError, DISPLAY_DELAY);
+        }
     }
 }
 
@@ -381,77 +393,89 @@ function initPagination() {
     });
 }
 
-async function renderAvailability() {
+async function renderAvailability(isAutoRefresh = false) {
     if (!availabilityContainer) return;
 
     try {
-        availabilityContainer.innerHTML = '';
-        NODE_LIST.forEach(nodeName => {
-            availabilityContainer.innerHTML += createLoadingAvailabilityCard(nodeName);
-        });
+        if (!isAutoRefresh) {
+            availabilityContainer.innerHTML = '';
+            NODE_LIST.forEach(nodeName => {
+                availabilityContainer.innerHTML += createLoadingAvailabilityCard(nodeName);
+            });
+        }
 
         const response = await fetch(AVAILABILITY_API_URL);
         const allHistory = await response.json();
 
-        let html = '';
-
-        setTimeout(() => {
+        const updateContent = () => {
+            let html = '';
             for (const nodeName in allHistory) {
-            const history = allHistory[nodeName];
-            if (!history || history.length === 0) continue;
+                const history = allHistory[nodeName];
+                if (!history || history.length === 0) continue;
 
-            const onlineCount = history.filter(h => h.status === 'online').length;
-            const uptimePct = ((onlineCount / history.length) * 100).toFixed(1);
+                const onlineCount = history.filter(h => h.status === 'online').length;
+                const uptimePct = ((onlineCount / history.length) * 100).toFixed(1);
 
-            let pctColor = '#2ecc71';
-            const pctValue = parseFloat(uptimePct);
-            if (pctValue <= 20) {
-                pctColor = '#e74c3c';
-            } else if (pctValue < 90) {
-                pctColor = '#dfb50d';
-            }
+                let pctColor = '#2ecc71';
+                const pctValue = parseFloat(uptimePct);
+                if (pctValue <= 20) {
+                    pctColor = '#e74c3c';
+                } else if (pctValue < 90) {
+                    pctColor = '#dfb50d';
+                }
 
-            let segmentsHtml = '';
-            const emptyPoints = MAX_HISTORY_POINTS - history.length;
-            for (let i = 0; i < emptyPoints; i++) {
-                segmentsHtml += '<div class="uptime-segment none"><span class="tooltip-text">无数据</span></div>';
-            }
+                let segmentsHtml = '';
+                const emptyPoints = MAX_HISTORY_POINTS - history.length;
+                for (let i = 0; i < emptyPoints; i++) {
+                    segmentsHtml += '<div class="uptime-segment none"><span class="tooltip-text">无数据</span></div>';
+                }
 
-            history.forEach(point => {
-                const timeStr = formatTimestamp(point.time);
-                const statusText = point.status === 'online' ? '正常' : '离线';
-                const statusClass = point.status === 'online' ? '' : 'down';
-                segmentsHtml += `
-                    <div class="uptime-segment ${statusClass}">
-                        <span class="tooltip-text">${timeStr}<br>状态: ${statusText}</span>
+                history.forEach(point => {
+                    const timeStr = formatTimestamp(point.time);
+                    const statusText = point.status === 'online' ? '正常' : '离线';
+                    const statusClass = point.status === 'online' ? '' : 'down';
+                    segmentsHtml += `
+                        <div class="uptime-segment ${statusClass}">
+                            <span class="tooltip-text">${timeStr}<br>状态: ${statusText}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="uptime-card">
+                        <div class="uptime-header">
+                            <div class="uptime-title">${nodeName}</div>
+                            <div class="uptime-pct" style="color: ${pctColor}">${uptimePct}%</div>
+                        </div>
+                        <div class="uptime-bar">
+                            ${segmentsHtml}
+                        </div>
+                        <div class="uptime-footer">
+                            <span>${formatDuration(MAX_HISTORY_POINTS * 15)}前</span>
+                            <span>最近</span>
+                            <span>现在</span>
+                        </div>
                     </div>
                 `;
-            });
-
-            html += `
-                <div class="uptime-card">
-                    <div class="uptime-header">
-                        <div class="uptime-title">${nodeName}</div>
-                        <div class="uptime-pct" style="color: ${pctColor}">${uptimePct}%</div>
-                    </div>
-                    <div class="uptime-bar">
-                        ${segmentsHtml}
-                    </div>
-                    <div class="uptime-footer">
-                        <span>${formatDuration(MAX_HISTORY_POINTS * 15)}前</span>
-                        <span>最近</span>
-                        <span>现在</span>
-                    </div>
-                </div>
-            `;
             }
             availabilityContainer.innerHTML = html || '<div class="loading">暂无数据...</div>';
-        }, DISPLAY_DELAY);
+        };
+
+        if (isAutoRefresh) {
+            updateContent();
+        } else {
+            setTimeout(updateContent, DISPLAY_DELAY);
+        }
 
     } catch (error) {
-        setTimeout(() => {
+        const showError = () => {
             availabilityContainer.innerHTML = '<div class="loading">加载失败</div>';
-        }, DISPLAY_DELAY);
+        };
+        if (isAutoRefresh) {
+            showError();
+        } else {
+            setTimeout(showError, DISPLAY_DELAY);
+        }
     }
 }
 
@@ -462,9 +486,9 @@ function resetRefreshTimer() {
 
     refreshInterval = setInterval(() => {
         if (document.getElementById('status-page-1').classList.contains('active')) {
-            fetchNodeData();
+            fetchNodeData(true);
         } else if (document.getElementById('status-page-2').classList.contains('active')) {
-            renderAvailability();
+            renderAvailability(true);
         }
     }, 60000);
 }
