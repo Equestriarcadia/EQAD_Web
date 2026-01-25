@@ -403,6 +403,14 @@ async function renderAvailability() {
             const onlineCount = history.filter(h => h.status === 'online').length;
             const uptimePct = ((onlineCount / history.length) * 100).toFixed(1);
 
+            let pctColor = '#2ecc71';
+            const pctValue = parseFloat(uptimePct);
+            if (pctValue <= 20) {
+                pctColor = '#e74c3c';
+            } else if (pctValue < 90) {
+                pctColor = '#dfb50d';
+            }
+
             let segmentsHtml = '';
             const emptyPoints = MAX_HISTORY_POINTS - history.length;
             for (let i = 0; i < emptyPoints; i++) {
@@ -424,7 +432,7 @@ async function renderAvailability() {
                 <div class="uptime-card">
                     <div class="uptime-header">
                         <div class="uptime-title">${nodeName}</div>
-                        <div class="uptime-pct">${uptimePct}%</div>
+                        <div class="uptime-pct" style="color: ${pctColor}">${uptimePct}%</div>
                     </div>
                     <div class="uptime-bar">
                         ${segmentsHtml}
