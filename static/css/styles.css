@@ -1373,9 +1373,8 @@ strong {
 
 .wiki-card {
     background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.3rem;
-	padding-left: 1.9rem;
+    border-radius: 20px;
+    padding: 4px 10px 10px 20px;
     margin-bottom: 1.5rem;
 	border: 1px solid #7a7a7a2a;
 }
@@ -1423,9 +1422,50 @@ strong {
 }
 
 @media (max-width: 992px) {
+	.command-table, 
+	.command-table thead, 
+	.command-table tbody, 
+	.command-table th, 
+	.command-table td, 
+	.command-table tr { 
+		display: block; 
+	}
+	
+	.command-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.command-table tr { border: 1px solid #ccc; margin-bottom: 1rem; }
+	
+	.command-table td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50% !important; 
+		text-align: left;
+		min-height: 40px;
+	}
+	
+	.command-table td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		font-weight: bold;
+		content: attr(data-label);
+	}
+	
+	.command-table td:last-child {
+		border-bottom: 0;
+	}
+	
 	.command-table th,
 	.command-table td {
-   		padding: 0.25rem;
+   		padding: 0.4rem;
 		font-size: 13px;
 	}
 }
