@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
+import PageHeader from '~/components/PageHeader.vue'
+
 interface BreadcrumbItem {
   label: string
   href?: string
@@ -66,33 +69,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="wiki-page-shell">
-    <header id="header" class="ex-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1>{{ title }}</h1>
-            <h5>{{ subtitle }}</h5>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="ex-basic-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumbs">
-              <NuxtLink to="/">主页</NuxtLink>
-              <template v-for="item in breadcrumbs" :key="item.label">
-                <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
-                <NuxtLink v-if="item.href" :to="item.href">{{ item.label }}</NuxtLink>
-                <span v-else>{{ item.label }}</span>
-              </template>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageHeader :title="title" :subtitle="subtitle" />
+    <PageBreadcrumbs :items="breadcrumbs" />
 
     <div class="ex-basic-2">
       <div class="container">

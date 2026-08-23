@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
+import PageHeader from '~/components/PageHeader.vue'
+
 useHead({
   title: '命令列表 - EQAD Network',
   meta: [
@@ -12,29 +15,8 @@ useHead({
 
 <template>
   <div class="command-page">
-    <header id="header" class="ex-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1>命令列表</h1>
-            <h5>Command list</h5>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="ex-basic-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumbs">
-              <NuxtLink to="/">主页</NuxtLink>
-              <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;命令列表</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageHeader title="命令列表" subtitle="Command list" />
+    <PageBreadcrumbs :items="[{ label: '命令列表' }]" />
 
     <div class="ex-basic-1">
       <div class="container">

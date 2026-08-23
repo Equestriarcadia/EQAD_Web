@@ -2,6 +2,8 @@
 import type { NuxtError } from '#app'
 import AppFooter from '~/components/AppFooter.vue'
 import AppHeader from '~/components/AppHeader.vue'
+import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
+import PageHeader from '~/components/PageHeader.vue'
 
 const props = defineProps<{
   error: NuxtError
@@ -32,7 +34,12 @@ const errorMessage = computed(() => {
   return props.error?.statusMessage || '页面加载失败'
 })
 
-const goHome = () => clearError({ redirect: '/' })
+const errorBreadcrumbs = computed(() => [{ label: String(errorCode.value) }])
+
+const goHome = (event?: MouseEvent) => {
+  event?.preventDefault()
+  return clearError({ redirect: '/' })
+}
 
 useHead({
   title: computed(() => `${pageTitle.value} - EQAD Network`)
@@ -44,29 +51,8 @@ useHead({
     <AppHeader />
 
     <main class="site-main">
-      <header id="error" class="ex-header">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <h1>{{ pageTitle }}</h1>
-              <h5>Code:{{ errorCode }}</h5>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="ex-basic-1">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="breadcrumbs">
-                <NuxtLink to="/" @click="goHome">主页</NuxtLink>
-                <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;{{ errorCode }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHeader id="error" :title="pageTitle" :subtitle="'Code:' + errorCode" />
+      <PageBreadcrumbs :items="errorBreadcrumbs" @home-click="goHome" />
 
       <div id="info" class="basic-2">
         <div class="container">

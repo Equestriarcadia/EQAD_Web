@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
+import PageHeader from '~/components/PageHeader.vue'
 
 useHead({
   title: '服务状态 - EQAD Network',
@@ -309,29 +311,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="service-status-page">
-    <header id="header" class="ex-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1>服务状态</h1>
-            <h5>Server status</h5>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="ex-basic-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumbs">
-              <NuxtLink to="/">主页</NuxtLink>
-              <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;服务状态</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageHeader title="服务状态" subtitle="Server status" />
+    <PageBreadcrumbs :items="[{ label: '服务状态' }]" />
 
     <div class="basic-2">
       <div class="container">
@@ -551,4 +532,3 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
-
