@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import HomeAbout from '~/components/content/home/HomeAbout.vue'
-import HomeHero from '~/components/content/home/HomeHero.vue'
-import HomeServers from '~/components/content/home/HomeServers.vue'
-import HomeStrengths from '~/components/content/home/HomeStrengths.vue'
-import HomeTeam from '~/components/content/home/HomeTeam.vue'
+import HomeAbout from '~/components/HomeAbout.vue'
+import HomeHero from '~/components/HomeHero.vue'
+import HomeServers from '~/components/HomeServers.vue'
+import HomeStrengths from '~/components/HomeStrengths.vue'
+import HomeTeam from '~/components/HomeTeam.vue'
 
 useHead({
   title: '主页 - EQAD Network',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WikiPageShell from '~/components/content/wiki/WikiPageShell.vue'
+import WikiPageShell from '~/components/WikiPageShell.vue'
 
 const sidebarItems = [
   { label: '简介', href: '#about' },

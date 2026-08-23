@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ServerStatus from '~/components/content/home/ServerStatus.vue'
+import ServerStatus from '~/components/ServerStatus.vue'
 
 defineProps<{
   title: string
