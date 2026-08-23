@@ -26,6 +26,10 @@ button:focus-visible {
     min-height: 100vh;
 }
 
+.command-page .command-content {
+    background-color: #fff;
+}
+
 .navbar-custom .navbar-toggler {
     display: inline-flex;
     width: 2.75rem;

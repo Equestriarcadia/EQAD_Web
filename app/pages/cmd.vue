@@ -18,7 +18,7 @@ useHead({
     <PageHeader title="命令列表" subtitle="Command list" />
     <PageBreadcrumbs :items="[{ label: '命令列表' }]" />
 
-    <div class="ex-basic-1">
+    <div class="ex-basic-1 command-content">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
