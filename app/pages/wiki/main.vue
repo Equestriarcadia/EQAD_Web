@@ -127,7 +127,7 @@ useHead({
           </tr>
         </tbody>
       </table>
-      <p>更多命令请查看<NuxtLink to="/cmd.html">完整命令列表</NuxtLink></p>
+      <p>更多命令请查看<NuxtLink to="/cmd">完整命令列表</NuxtLink></p>
     </section>
   </WikiPageShell>
 </template>
