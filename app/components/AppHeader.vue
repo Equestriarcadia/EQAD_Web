@@ -122,13 +122,25 @@ watch(() => route.path, () => {
       >
         <ul class="navbar-nav">
           <li v-for="item in navItems" :key="item.href" class="nav-item">
+            <NuxtLink
+              v-if="!item.external"
+              class="nav-link page-scroll"
+              :class="{ active: activeNavLabel === item.label }"
+              :aria-current="activeNavLabel === item.label ? 'page' : undefined"
+              :to="item.href"
+              @click="handleNavClick(item)"
+            >
+              {{ item.label }}
+              <span v-if="activeNavLabel === item.label" class="sr-only">（当前）</span>
+            </NuxtLink>
             <a
+              v-else
               class="nav-link page-scroll"
               :class="{ active: activeNavLabel === item.label }"
               :aria-current="activeNavLabel === item.label ? 'page' : undefined"
               :href="item.href"
-              :target="item.external ? '_blank' : undefined"
-              :rel="item.external ? 'noopener noreferrer' : undefined"
+              target="_blank"
+              rel="noopener noreferrer"
               @click="handleNavClick(item)"
             >
               {{ item.label }}

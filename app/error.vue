@@ -79,7 +79,7 @@ useHead({
                   <br>
                   <br>
                   {{ errorMessage }}<br>
-                  <a href="/" @click.prevent="goHome"><strong>返回主页</strong></a><br>
+                  <NuxtLink to="/" @click.prevent="goHome"><strong>返回主页</strong></NuxtLink><br>
                   <br>
                   <br>
                 </p>

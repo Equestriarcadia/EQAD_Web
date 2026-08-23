@@ -31,7 +31,7 @@ const imageSource = (imageNumber: number) => `/static/image/bgp/${imageNumber}.j
       <h1 id="hero-title">马国乐土</h1>
       <p class="hero-subtitle">这里是马国乐土</p>
       <p class="hero-description">一个由马迷们合作开设的 Minecraft 服务器</p>
-      <a class="btn-solid-lg page-scroll" href="#list">服务器列表</a>
+      <NuxtLink class="btn-solid-lg page-scroll" to="#list">服务器列表</NuxtLink>
     </div>
   </section>
 </template>

@@ -103,15 +103,15 @@ onBeforeUnmount(() => {
             </div>
             <ul class="sidebar-nav-menu">
               <li v-for="item in sidebarItems" :key="item.href">
-                <a
+                <NuxtLink
                   class="page-scroll"
                   :class="{ active: activeSection === sectionId(item.href) }"
                   :aria-current="activeSection === sectionId(item.href) ? 'location' : undefined"
-                  :href="item.href"
+                  :to="item.href"
                   @click="setActiveSection(item.href)"
                 >
                   {{ item.label }}
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </aside>

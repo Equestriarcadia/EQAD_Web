@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     '~/assets/css/site.css'
   ],
   app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    },
     head: {
       htmlAttrs: {
         lang: 'zh-CN'
