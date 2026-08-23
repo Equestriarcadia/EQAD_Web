@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/bootstrap.css',
+    '~/assets/css/magnific-popup.css',
     '~/assets/css/legacy.css',
     '~/assets/css/site.css'
   ],

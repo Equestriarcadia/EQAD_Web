@@ -7,14 +7,19 @@ interface NavItem {
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
+const route = useRoute()
 
-const navItems: NavItem[] = [
-  { label: '主页', href: '#header' },
-  { label: '服务器列表', href: '#list' },
-  { label: '游玩指南', href: '/wiki/main.html' },
-  { label: '服务状态', href: '/status.html' },
-  { label: '加入群聊', href: 'https://qm.qq.com/q/MOZWC51P4Q', external: true }
-]
+const navItems = computed<NavItem[]>(() => {
+  const isHomePage = route.path === '/'
+
+  return [
+    { label: '主页', href: isHomePage ? '#header' : '/#header' },
+    { label: '服务器列表', href: isHomePage ? '#list' : '/#list' },
+    { label: '游玩指南', href: '/wiki/main' },
+    { label: '服务状态', href: '/status.html' },
+    { label: '加入群聊', href: 'https://qm.qq.com/q/MOZWC51P4Q', external: true }
+  ]
+})
 
 const closeMenu = () => {
   isMenuOpen.value = false
@@ -66,14 +71,14 @@ onBeforeUnmount(() => {
           <li v-for="item in navItems" :key="item.href" class="nav-item">
             <a
               class="nav-link page-scroll"
-              :class="{ active: item.href === '#header' }"
+              :class="{ active: item.label === '主页' }"
               :href="item.href"
               :target="item.external ? '_blank' : undefined"
               :rel="item.external ? 'noopener noreferrer' : undefined"
               @click="closeMenu"
             >
               {{ item.label }}
-              <span v-if="item.href === '#header'" class="sr-only">（当前）</span>
+              <span v-if="item.label === '主页'" class="sr-only">（当前）</span>
             </a>
           </li>
         </ul>
