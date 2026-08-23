@@ -35,7 +35,7 @@ const navItems = computed<NavItem[]>(() => {
     { label: '主页', href: isHomePage ? '#header' : '/#header' },
     { label: '服务器列表', href: isHomePage ? '#list' : '/#list' },
     { label: '游玩指南', href: '/wiki/main' },
-    { label: '服务状态', href: '/status.html' },
+    { label: '服务状态', href: '/status' },
     { label: '加入群聊', href: 'https://qm.qq.com/q/MOZWC51P4Q', external: true }
   ]
 })

@@ -186,6 +186,20 @@ button:focus-visible {
     opacity: 0;
 }
 
+.service-status-page .status-page.active {
+    animation: none;
+}
+
+.status-panel-enter-active,
+.status-panel-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.status-panel-enter-from,
+.status-panel-leave-to {
+    opacity: 0;
+}
+
 .loader-fade-enter-active,
 .loader-fade-leave-active {
     transition: opacity 0.35s ease;
