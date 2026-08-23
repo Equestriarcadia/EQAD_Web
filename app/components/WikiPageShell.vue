@@ -65,61 +65,63 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header id="header" class="ex-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>{{ title }}</h1>
-          <h5>{{ subtitle }}</h5>
+  <div class="wiki-page-shell">
+    <header id="header" class="ex-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>{{ title }}</h1>
+            <h5>{{ subtitle }}</h5>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="ex-basic-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="breadcrumbs">
-            <NuxtLink to="/">主页</NuxtLink>
-            <template v-for="item in breadcrumbs" :key="item.label">
-              <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
-              <NuxtLink v-if="item.href" :to="item.href">{{ item.label }}</NuxtLink>
-              <span v-else>{{ item.label }}</span>
-            </template>
+    <div class="ex-basic-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumbs">
+              <NuxtLink to="/">主页</NuxtLink>
+              <template v-for="item in breadcrumbs" :key="item.label">
+                <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
+                <NuxtLink v-if="item.href" :to="item.href">{{ item.label }}</NuxtLink>
+                <span v-else>{{ item.label }}</span>
+              </template>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="ex-basic-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <aside class="sidebar-nav">
-            <div class="sidebar-nav-header">
-              <h4><br><br><br>目录</h4>
+    <div class="ex-basic-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <aside class="sidebar-nav">
+              <div class="sidebar-nav-header">
+                <h4><br><br><br>目录</h4>
+              </div>
+              <ul class="sidebar-nav-menu">
+                <li v-for="item in sidebarItems" :key="item.href">
+                  <NuxtLink
+                    class="page-scroll"
+                    :class="{ active: activeSection === sectionId(item.href) }"
+                    :aria-current="activeSection === sectionId(item.href) ? 'location' : undefined"
+                    :to="item.href"
+                    @click="setActiveSection(item.href)"
+                  >
+                    {{ item.label }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="wiki-content">
+              <slot />
             </div>
-            <ul class="sidebar-nav-menu">
-              <li v-for="item in sidebarItems" :key="item.href">
-                <NuxtLink
-                  class="page-scroll"
-                  :class="{ active: activeSection === sectionId(item.href) }"
-                  :aria-current="activeSection === sectionId(item.href) ? 'location' : undefined"
-                  :to="item.href"
-                  @click="setActiveSection(item.href)"
-                >
-                  {{ item.label }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="col-lg-9">
-          <div class="wiki-content">
-            <slot />
           </div>
         </div>
       </div>
