@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nextTick } from 'vue'
+
 interface NavItem {
   label: string
   href: string
@@ -8,6 +10,23 @@ interface NavItem {
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 const route = useRoute()
+const activeHomeSection = ref<'home' | 'list'>('home')
+
+const activeNavLabel = computed(() => {
+  if (route.path.startsWith('/wiki')) {
+    return '游玩指南'
+  }
+
+  if (route.path === '/status' || route.path === '/status.html') {
+    return '服务状态'
+  }
+
+  if (route.path === '/') {
+    return activeHomeSection.value === 'list' ? '服务器列表' : '主页'
+  }
+
+  return ''
+})
 
 const navItems = computed<NavItem[]>(() => {
   const isHomePage = route.path === '/'
@@ -25,17 +44,51 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const updateScrollState = () => {
+const updateHomeSection = () => {
+  if (route.path !== '/') {
+    activeHomeSection.value = 'home'
+    return
+  }
+
+  const serverList = document.getElementById('list')
+  const activeMarker = window.scrollY + Math.min(window.innerHeight * 0.3, 220)
+  const serverListTop = serverList
+    ? serverList.getBoundingClientRect().top + window.scrollY
+    : Number.POSITIVE_INFINITY
+
+  activeHomeSection.value = serverListTop <= activeMarker ? 'list' : 'home'
+}
+
+const updateNavigationState = () => {
   isScrolled.value = window.scrollY > 20
+  updateHomeSection()
+}
+
+const handleNavClick = (item: NavItem) => {
+  closeMenu()
+
+  if (item.label === '主页') {
+    activeHomeSection.value = 'home'
+  }
+
+  if (item.label === '服务器列表') {
+    activeHomeSection.value = 'list'
+  }
 }
 
 onMounted(() => {
-  updateScrollState()
-  window.addEventListener('scroll', updateScrollState, { passive: true })
+  updateNavigationState()
+  window.addEventListener('scroll', updateNavigationState, { passive: true })
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', updateScrollState)
+  window.removeEventListener('scroll', updateNavigationState)
+})
+
+watch(() => route.path, () => {
+  if (import.meta.client) {
+    nextTick(updateHomeSection)
+  }
 })
 </script>
 
@@ -71,14 +124,15 @@ onBeforeUnmount(() => {
           <li v-for="item in navItems" :key="item.href" class="nav-item">
             <a
               class="nav-link page-scroll"
-              :class="{ active: item.label === '主页' }"
+              :class="{ active: activeNavLabel === item.label }"
+              :aria-current="activeNavLabel === item.label ? 'page' : undefined"
               :href="item.href"
               :target="item.external ? '_blank' : undefined"
               :rel="item.external ? 'noopener noreferrer' : undefined"
-              @click="closeMenu"
+              @click="handleNavClick(item)"
             >
               {{ item.label }}
-              <span v-if="item.label === '主页'" class="sr-only">（当前）</span>
+              <span v-if="activeNavLabel === item.label" class="sr-only">（当前）</span>
             </a>
           </li>
         </ul>
