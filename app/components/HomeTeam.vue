@@ -33,7 +33,8 @@ const members: TeamMember[] = [
     socialLinks: [
       { href: 'https://space.bilibili.com/494565117', icon: '/static/image/bili.svg', title: '哔哩哔哩个人空间' },
       { href: 'https://github.com/JessDaodao', icon: '/static/image/github.svg', title: 'Github 个人主页' },
-      { href: 'https://namemc.com/profile/ress2338396', icon: '/static/image/namemc.svg', title: 'NameMC 个人页' }
+      { href: 'https://namemc.com/profile/ress2338396', icon: '/static/image/namemc.svg', title: 'NameMC 个人页' },
+      { href: 'https://csituka.top/', icon: '/static/image/home.svg', title: '个人网站' }
     ]
   },
   {
