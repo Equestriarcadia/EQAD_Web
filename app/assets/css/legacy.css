@@ -1878,12 +1878,12 @@ strong {
     display: flex;
 	margin: auto;
     justify-content: center;
-	background-color: rgba(229, 229, 229, 0.42);
+	background-color: #e5e5e5;
 	width: 30%;
 	height: 23%;
 	border-radius: 100%;
 	z-index: 19;
-	box-shadow: 0px 0px 16rem 19rem rgba(229, 229, 229, 0.42);
+	box-shadow: 0px 0px 16rem 19rem #e5e5e5;
 }
 
 #team .row {
@@ -1901,8 +1901,8 @@ strong {
 
 @media (max-width: 768px) {
   .titlebg {
-	background-color: rgba(229, 229, 229, 0.35);
-	box-shadow: 0px 0px 16rem 19rem rgba(229, 229, 229, 0.35);
+	background-color: #e5e5e5c2;
+	box-shadow: 0px 0px 16rem 19rem #e5e5e5c2;
   }
 }
 
