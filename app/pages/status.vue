@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
-import PageHeader from '~/components/PageHeader.vue'
+import PageBreadcrumbs from '~/components/widgets/PageBreadcrumbs.vue'
+import PageHeader from '~/components/widgets/PageHeader.vue'
 
 useHead({
   title: '服务状态 - EQAD Network',

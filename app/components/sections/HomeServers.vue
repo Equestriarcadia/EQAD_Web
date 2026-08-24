@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HomeServerCard from '~/components/HomeServerCard.vue'
+import HomeServerCard from '~/components/widgets/HomeServerCard.vue'
 
 const servers = [
   {

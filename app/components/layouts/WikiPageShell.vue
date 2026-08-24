@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
-import PageHeader from '~/components/PageHeader.vue'
+import PageBreadcrumbs from '~/components/widgets/PageBreadcrumbs.vue'
+import PageHeader from '~/components/widgets/PageHeader.vue'
 
 interface BreadcrumbItem {
   label: string

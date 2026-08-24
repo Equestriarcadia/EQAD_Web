@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
-import AppFooter from '~/components/AppFooter.vue'
-import AppHeader from '~/components/AppHeader.vue'
-import PageBreadcrumbs from '~/components/PageBreadcrumbs.vue'
-import PageHeader from '~/components/PageHeader.vue'
+import AppFooter from '~/components/layouts/AppFooter.vue'
+import AppHeader from '~/components/layouts/AppHeader.vue'
+import PageBreadcrumbs from '~/components/widgets/PageBreadcrumbs.vue'
+import PageHeader from '~/components/widgets/PageHeader.vue'
 
 const props = defineProps<{
   error: NuxtError
