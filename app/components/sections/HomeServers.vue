@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HomeServerCard from '~/components/widgets/HomeServerCard.vue'
-
 const servers = [
   {
     title: '纯净群组',

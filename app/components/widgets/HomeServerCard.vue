@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ServerStatus from '~/components/widgets/ServerStatus.vue'
-
 defineProps<{
   title: string
   description: string

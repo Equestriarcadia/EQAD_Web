@@ -11,6 +11,13 @@ export default defineNuxtConfig({
     '~/assets/css/legacy.css',
     '~/assets/css/site.css'
   ],
+  components: {
+    dirs: [
+      { path: '~/components/layouts', pathPrefix: false },
+      { path: '~/components/sections', pathPrefix: false },
+      { path: '~/components/widgets', pathPrefix: false }
+    ]
+  },
   app: {
     pageTransition: {
       name: 'page',

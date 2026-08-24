@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import PageBreadcrumbs from '~/components/widgets/PageBreadcrumbs.vue'
-import PageHeader from '~/components/widgets/PageHeader.vue'
-
 useHead({
   title: '命令列表 - EQAD Network',
   meta: [

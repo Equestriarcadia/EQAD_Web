@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import WikiPageShell from '~/components/layouts/WikiPageShell.vue'
-
 const sidebarItems = [
   { label: '开始游玩', href: '#getting-started' },
   { label: '服务器简介', href: '#gameplay-guides' },
