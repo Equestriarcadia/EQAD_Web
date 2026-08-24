@@ -594,8 +594,8 @@ strong {
     flex-direction: column;
     text-align: center;
 	background-color: #e5e5e5b5;
-	backdrop-filter: blur(2px);
 	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
 }
 
 .header h1 {
@@ -963,8 +963,8 @@ strong {
         padding: 0.375rem 1.5rem 0.375rem 2rem;
 		box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
 		background-color: #eeeeeeb2;
-		backdrop-filter: blur(10px) saturate(180%);
 		-webkit-backdrop-filter: blur(10px) saturate(180%);
+		backdrop-filter: blur(10px) saturate(180%);
 	}
 
 	.navbar-custom.top-nav-collapse .navbar-brand.logo-text {
